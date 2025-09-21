@@ -1,0 +1,457 @@
+openapi: 3.1.0
+info:
+  title: SmartSports Rwanda API
+  description: |
+    High-scale ticketing system API for sports events in Rwanda.
+    
+    ## Features
+    - Event management and ticket sales
+    - Mobile money payments (MTN MoMo, Airtel Money)
+    - Real-time seat reservations
+    - QR code ticket generation
+    - Comprehensive fraud detection
+    - High-availability architecture for 10M+ concurrent users
+    
+    ## Authentication
+    Most endpoints require JWT authentication. Include the token in the Authorization header:
+    ```
+    Authorization: Bearer <your-jwt-token>
+    ```
+    
+    ## Rate Limiting
+    API endpoints are rate-limited to ensure fair usage:
+    - General endpoints: 1000 requests per 15 minutes
+    - Authentication: 10 attempts per 15 minutes  
+    - Payments: 20 requests per 15 minutes
+    - Ticket purchases: 10 requests per 5 minutes
+    
+    ## Idempotency
+    Payment and ticket purchase endpoints support idempotency keys to prevent duplicate operations.
+    Include the `Idempotency-Key` header with a unique value.
+    
+    ## Error Handling
+    The API uses standard HTTP status codes and returns errors in this format:
+    ```json
+    {
+      "success": false,
+      "message": "Error description",
+      "errors": [
+        {
+          "field": "field_name",
+          "message": "Specific error message"
+        }
+      ]
+    }
+    ```
+  version: 1.0.0
+  contact:
+    name: SmartSports Rwanda API Support
+    email: api-support@smartsports.rw
+    url: https://smartsports.rw/support
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.smartsports.rw/api/v1
+    description: Production server
+  - url: https://staging-api.smartsports.rw/api/v1
+    description: Staging server
+  - url: http://localhost:3000/api/v1
+    description: Development server
+
+security:
+  - bearerAuth: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from /auth/login endpoint
+
+  schemas:
+    Error:
+      type: object
+      required:
+        - success
+        - message
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: "Validation failed"
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              message:
+                type: string
+
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        first_name:
+          type: string
+          maxLength: 50
+        last_name:
+          type: string
+          maxLength: 50
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+          pattern: '^(\+250|250)?[0-9]{9}$'
+        role:
+          type: string
+          enum: [user, admin, super_admin]
+        status:
+          type: string
+          enum: [active, inactive, suspended]
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+          maxLength: 200
+        description:
+          type: string
+        sport:
+          type: string
+          enum: [football, basketball, volleyball, tennis, athletics]
+        start_datetime:
+          type: string
+          format: date-time
+        end_datetime:
+          type: string
+          format: date-time
+        venue_id:
+          type: string
+          format: uuid
+        home_team_id:
+          type: string
+          format: uuid
+        away_team_id:
+          type: string
+          format: uuid
+        regular_price:
+          type: number
+          minimum: 0
+        vip_price:
+          type: number
+          minimum: 0
+        student_price:
+          type: number
+          minimum: 0
+        child_price:
+          type: number
+          minimum: 0
+        tickets_available_count:
+          type: integer
+          minimum: 0
+        status:
+          type: string
+          enum: [draft, published, cancelled, completed]
+        image_url:
+          type: string
+          format: uri
+        created_at:
+          type: string
+          format: date-time
+
+    Ticket:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        event_id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+          format: uuid
+        ticket_type:
+          type: string
+          enum: [regular, vip, student, child]
+        price:
+          type: number
+          minimum: 0
+        status:
+          type: string
+          enum: [available, reserved, sold, used, cancelled]
+        qr_code:
+          type: string
+        seat_number:
+          type: string
+        section:
+          type: string
+        purchased_at:
+          type: string
+          format: date-time
+
+    Payment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        payment_reference:
+          type: string
+        user_id:
+          type: string
+          format: uuid
+        event_id:
+          type: string
+          format: uuid
+        total_amount:
+          type: number
+          minimum: 0
+        payment_method:
+          type: string
+          enum: [mtn_momo, airtel_money, bank_transfer, credit_card, wallet]
+        status:
+          type: string
+          enum: [pending, processing, completed, failed, cancelled, refunded]
+        external_reference:
+          type: string
+        customer_name:
+          type: string
+        customer_phone:
+          type: string
+        customer_email:
+          type: string
+          format: email
+        fraud_score:
+          type: integer
+          minimum: 0
+          maximum: 100
+        initiated_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+
+    Reservation:
+      type: object
+      properties:
+        reservationToken:
+          type: string
+        event_id:
+          type: string
+          format: uuid
+        ticket_type:
+          type: string
+          enum: [regular, vip, student, child]
+        quantity:
+          type: integer
+          minimum: 1
+          maximum: 10
+        status:
+          type: string
+          enum: [active, confirmed, cancelled, expired]
+        expires_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+
+    HealthCheck:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [healthy, degraded, unhealthy]
+        timestamp:
+          type: string
+          format: date-time
+        checks:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              status:
+                type: string
+                enum: [healthy, degraded, unhealthy]
+              name:
+                type: string
+              response_time:
+                type: number
+              critical:
+                type: boolean
+              error:
+                type: string
+              details:
+                type: object
+
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      description: Page number for pagination
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+
+    LimitParam:
+      name: limit
+      in: query
+      description: Number of items per page
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+
+    EventIdParam:
+      name: eventId
+      in: path
+      required: true
+      description: Event UUID
+      schema:
+        type: string
+        format: uuid
+
+    UserIdParam:
+      name: userId
+      in: path
+      required: true
+      description: User UUID
+      schema:
+        type: string
+        format: uuid
+
+    PaymentIdParam:
+      name: paymentId
+      in: path
+      required: true
+      description: Payment UUID
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    BadRequest:
+      description: Bad request - validation error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    Unauthorized:
+      description: Unauthorized - invalid or missing authentication
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    Forbidden:
+      description: Forbidden - insufficient permissions
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    TooManyRequests:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            success: false
+            message: "Too many requests, please try again later"
+            retryAfter: 900
+
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+paths:
+  /health:
+    get:
+      summary: System health check
+      description: Check the overall health of the system and its dependencies
+      tags:
+        - Monitoring
+      security: []
+      responses:
+        '200':
+          description: System is healthy or degraded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheck'
+        '503':
+          description: System is unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheck'
+
+  /metrics:
+    get:
+      summary: Prometheus metrics
+      description: Get system metrics in Prometheus format
+      tags:
+        - Monitoring
+      security: []
+      responses:
+        '200':
+          description: Metrics in Prometheus format
+          content:
+            text/plain:
+              schema:
+                type: string
+
+tags:
+  - name: Authentication
+    description: User authentication and authorization
+  - name: Events
+    description: Sports event management
+  - name: Tickets
+    description: Ticket management and sales
+  - name: Payments
+    description: Payment processing and management
+  - name: Reservations
+    description: Seat reservation system
+  - name: Users
+    description: User management
+  - name: Monitoring
+    description: System health and metrics

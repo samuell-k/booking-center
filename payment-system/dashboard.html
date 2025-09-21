@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Dashboard - IntouchPay</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+            --info-color: #06b6d4;
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --border-focus: #3b82f6;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-card {
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .stats-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stats-card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stats-card-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .stats-card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stats-card-change {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .stats-card-change.positive {
+            color: var(--success-color);
+        }
+
+        .stats-card-change.negative {
+            color: var(--error-color);
+        }
+
+        /* Icon Colors */
+        .icon-primary { background-color: rgba(37, 99, 235, 0.1); color: var(--primary-color); }
+        .icon-success { background-color: rgba(16, 185, 129, 0.1); color: var(--success-color); }
+        .icon-error { background-color: rgba(239, 68, 68, 0.1); color: var(--error-color); }
+        .icon-warning { background-color: rgba(245, 158, 11, 0.1); color: var(--warning-color); }
+
+        /* Filters Section */
+        .filters-section {
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-input, .form-select {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            background: var(--surface-color);
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        /* Transactions Table */
+        .transactions-section {
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table th {
+            background-color: var(--background-color);
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .table td {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(37, 99, 235, 0.02);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+        }
+
+        .status-warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning-color);
+        }
+
+        .status-danger {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--error-color);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .pagination-btn {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border-color);
+            background: var(--surface-color);
+            color: var(--text-secondary);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Loading States */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .spinner {
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid var(--border-color);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.75rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .table-container {
+                font-size: 0.75rem;
+            }
+
+            .table th,
+            .table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast {
+            background: var(--surface-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 1rem;
+            border-left: 4px solid;
+            min-width: 300px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-success { border-left-color: var(--success-color); }
+        .toast-error { border-left-color: var(--error-color); }
+        .toast-warning { border-left-color: var(--warning-color); }
+        .toast-info { border-left-color: var(--info-color); }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                Payment Dashboard
+            </div>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-arrow-down"></i> Make Payment
+                </a>
+                <a href="withdrawal.html" class="nav-link">
+                    <i class="fas fa-arrow-up"></i> Withdrawal
+                </a>
+                <a href="#" class="nav-link" onclick="refreshData()">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Dashboard Stats -->
+        <div class="dashboard-grid" id="statsGrid">
+            <!-- Stats cards will be populated by JavaScript -->
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filters-grid">
+                <div class="form-group">
+                    <label class="form-label">Transaction Type</label>
+                    <select class="form-select" id="transactionTypeFilter">
+                        <option value="all">All Types</option>
+                        <option value="payment">Payments</option>
+                        <option value="withdrawal">Withdrawals</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="successful">Successful</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Search</label>
+                    <input type="text" class="form-input" id="searchInput" placeholder="Phone, name, transaction ID, or reason">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date From</label>
+                    <input type="date" class="form-input" id="dateFrom">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date To</label>
+                    <input type="date" class="form-input" id="dateTo">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i> Apply Filters
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-secondary" onclick="clearFilters()">
+                        <i class="fas fa-times"></i> Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <div class="transactions-section">
+            <div class="section-header">
+                <h2 class="section-title">Transaction History</h2>
+                <div>
+                    <span id="transactionCount" class="text-secondary">Loading...</span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Transaction ID</th>
+                            <th>Phone Number</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsTableBody">
+                        <!-- Transactions will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // Dashboard Management System
+        class PaymentDashboard {
+            constructor() {
+                this.currentPage = 1;
+                this.itemsPerPage = 20;
+                this.filters = {
+                    transactionType: 'all',
+                    status: 'all',
+                    search: '',
+                    dateFrom: '',
+                    dateTo: ''
+                };
+                this.refreshInterval = null;
+
+                this.init();
+            }
+
+            async init() {
+                this.setupEventListeners();
+                await this.loadDashboardData();
+                this.startAutoRefresh();
+            }
+
+            setupEventListeners() {
+                // Filter event listeners
+                document.getElementById('transactionTypeFilter').addEventListener('change', (e) => {
+                    this.filters.transactionType = e.target.value;
+                });
+
+                document.getElementById('statusFilter').addEventListener('change', (e) => {
+                    this.filters.status = e.target.value;
+                });
+
+                document.getElementById('searchInput').addEventListener('input', (e) => {
+                    this.filters.search = e.target.value;
+                });
+
+                document.getElementById('dateFrom').addEventListener('change', (e) => {
+                    this.filters.dateFrom = e.target.value;
+                });
+
+                document.getElementById('dateTo').addEventListener('change', (e) => {
+                    this.filters.dateTo = e.target.value;
+                });
+
+                // Auto-refresh every 30 seconds
+                this.startAutoRefresh();
+            }
+
+            startAutoRefresh() {
+                if (this.refreshInterval) {
+                    clearInterval(this.refreshInterval);
+                }
+
+                this.refreshInterval = setInterval(() => {
+                    this.loadDashboardData();
+                }, 30000); // 30 seconds
+            }
+
+            async loadDashboardData() {
+                try {
+                    await Promise.all([
+                        this.loadSummary(),
+                        this.loadTransactions()
+                    ]);
+                } catch (error) {
+                    console.error('Error loading dashboard data:', error);
+                    this.showToast('error', 'Error', 'Failed to load dashboard data');
+                }
+            }
+
+            async loadSummary() {
+                try {
+                    console.log('Loading summary data...');
+                    const response = await fetch('dashboard_api.php?endpoint=summary');
+                    console.log('Summary response status:', response.status);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    console.log('Summary data:', data);
+
+                    if (data.success) {
+                        this.renderSummaryCards(data.data);
+                    } else {
+                        throw new Error(data.message || 'Unknown error');
+                    }
+                } catch (error) {
+                    console.error('Error loading summary:', error);
+                    this.showToast('error', 'Error', 'Failed to load summary data: ' + error.message);
+                }
+            }
+
+            renderSummaryCards(data) {
+                const statsGrid = document.getElementById('statsGrid');
+
+                const cards = [
+                    {
+                        title: 'Total Transactions',
+                        value: data.total_transactions.toLocaleString(),
+                        change: `+${data.today_transactions} today`,
+                        icon: 'fas fa-receipt',
+                        iconClass: 'icon-primary'
+                    },
+                    {
+                        title: 'Total Payments',
+                        value: data.total_payments ? data.total_payments.toLocaleString() : '0',
+                        change: `${data.successful_payments || 0} successful`,
+                        icon: 'fas fa-arrow-down',
+                        iconClass: 'icon-success'
+                    },
+                    {
+                        title: 'Total Withdrawals',
+                        value: data.total_withdrawals ? data.total_withdrawals.toLocaleString() : '0',
+                        change: `${data.successful_withdrawals || 0} successful`,
+                        icon: 'fas fa-arrow-up',
+                        iconClass: 'icon-info'
+                    },
+                    {
+                        title: 'Total Amount',
+                        value: this.formatCurrency(data.total_amount),
+                        change: `${this.formatCurrency(data.today_amount)} today`,
+                        icon: 'fas fa-coins',
+                        iconClass: 'icon-primary'
+                    },
+                    {
+                        title: 'Pending Transactions',
+                        value: data.pending_transactions.toLocaleString(),
+                        change: 'Awaiting approval',
+                        icon: 'fas fa-clock',
+                        iconClass: 'icon-warning'
+                    },
+                    {
+                        title: 'Success Rate',
+                        value: `${data.success_rate}%`,
+                        change: 'Overall success rate',
+                        icon: 'fas fa-chart-line',
+                        iconClass: 'icon-success'
+                    }
+                ];
+
+                statsGrid.innerHTML = cards.map(card => `
+                    <div class="stats-card">
+                        <div class="stats-card-header">
+                            <span class="stats-card-title">${card.title}</span>
+                            <div class="stats-card-icon ${card.iconClass}">
+                                <i class="${card.icon}"></i>
+                            </div>
+                        </div>
+                        <div class="stats-card-value">${card.value}</div>
+                        <div class="stats-card-change">${card.change}</div>
+                    </div>
+                `).join('');
+            }
+
+            async loadTransactions() {
+                try {
+                    const params = new URLSearchParams({
+                        endpoint: 'transactions',
+                        page: this.currentPage,
+                        limit: this.itemsPerPage,
+                        transaction_type: this.filters.transactionType,
+                        status: this.filters.status,
+                        search: this.filters.search,
+                        date_from: this.filters.dateFrom,
+                        date_to: this.filters.dateTo
+                    });
+
+                    console.log('Loading transactions with params:', params.toString());
+                    const response = await fetch(`dashboard_api.php?${params}`);
+                    console.log('Transactions response status:', response.status);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    console.log('Transactions data:', data);
+
+                    if (data.success) {
+                        this.renderTransactionsTable(data.data.transactions);
+                        this.renderPagination(data.data.pagination);
+                        this.updateTransactionCount(data.data.pagination.total_records);
+                    } else {
+                        throw new Error(data.message || 'Unknown error');
+                    }
+                } catch (error) {
+                    console.error('Error loading transactions:', error);
+                    this.showToast('error', 'Error', 'Failed to load transactions: ' + error.message);
+                }
+            }
+
+            renderTransactionsTable(transactions) {
+                const tbody = document.getElementById('transactionsTableBody');
+
+                if (transactions.length === 0) {
+                    tbody.innerHTML = `
+                        <tr>
+                            <td colspan="7" style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+                                <i class="fas fa-inbox" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                                No transactions found
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                tbody.innerHTML = transactions.map(transaction => `
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="${transaction.type_icon || (transaction.transaction_type === 'withdrawal' ? 'fas fa-arrow-up text-primary' : 'fas fa-arrow-down text-success')}"
+                                   title="${transaction.transaction_type === 'withdrawal' ? 'Withdrawal' : 'Payment'}"></i>
+                                <span style="font-weight: 500; text-transform: capitalize;">
+                                    ${transaction.transaction_type || 'Payment'}
+                                </span>
+                            </div>
+                            ${transaction.reason && transaction.transaction_type === 'withdrawal' ?
+                                `<div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                                    ${transaction.reason}
+                                </div>` : ''
+                            }
+                        </td>
+                        <td>
+                            <div style="font-weight: 600; color: var(--text-primary);">
+                                ${transaction.request_transaction_id}
+                            </div>
+                            ${transaction.intouchpay_transaction_id ?
+                                `<div style="font-size: 0.75rem; color: var(--text-secondary);">
+                                    ${transaction.intouchpay_transaction_id}
+                                </div>` : ''
+                            }
+                        </td>
+                        <td>
+                            <div style="font-weight: 500;">${transaction.phone_formatted}</div>
+                        </td>
+                        <td>
+                            <div style="font-weight: 500;">
+                                ${transaction.user_name || 'N/A'}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="font-weight: 600; color: var(--text-primary);">
+                                ${this.formatCurrency(transaction.amount)}
+                            </div>
+                            ${transaction.withdraw_charge && transaction.withdraw_charge > 0 ?
+                                `<div style="font-size: 0.75rem; color: var(--text-secondary);">
+                                    +${this.formatCurrency(transaction.withdraw_charge)} fee
+                                </div>` : ''
+                            }
+                        </td>
+                        <td>
+                            <span class="status-badge status-${transaction.status_class}">
+                                ${this.capitalizeFirst(transaction.status)}
+                            </span>
+                        </td>
+                        <td>
+                            <div style="font-weight: 500;">
+                                ${transaction.created_at_formatted}
+                            </div>
+                            ${transaction.completed_at ?
+                                `<div style="font-size: 0.75rem; color: var(--text-secondary);">
+                                    Completed: ${new Date(transaction.completed_at).toLocaleDateString()}
+                                </div>` : ''
+                            }
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            renderPagination(pagination) {
+                const paginationContainer = document.getElementById('pagination');
+
+                if (pagination.total_pages <= 1) {
+                    paginationContainer.innerHTML = '';
+                    return;
+                }
+
+                let paginationHTML = '';
+
+                // Previous button
+                paginationHTML += `
+                    <button class="pagination-btn" ${!pagination.has_prev ? 'disabled' : ''}
+                            onclick="dashboard.goToPage(${pagination.current_page - 1})">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                `;
+
+                // Page numbers
+                const startPage = Math.max(1, pagination.current_page - 2);
+                const endPage = Math.min(pagination.total_pages, pagination.current_page + 2);
+
+                if (startPage > 1) {
+                    paginationHTML += `
+                        <button class="pagination-btn" onclick="dashboard.goToPage(1)">1</button>
+                    `;
+                    if (startPage > 2) {
+                        paginationHTML += `<span style="padding: 0 0.5rem;">...</span>`;
+                    }
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    paginationHTML += `
+                        <button class="pagination-btn ${i === pagination.current_page ? 'active' : ''}"
+                                onclick="dashboard.goToPage(${i})">${i}</button>
+                    `;
+                }
+
+                if (endPage < pagination.total_pages) {
+                    if (endPage < pagination.total_pages - 1) {
+                        paginationHTML += `<span style="padding: 0 0.5rem;">...</span>`;
+                    }
+                    paginationHTML += `
+                        <button class="pagination-btn" onclick="dashboard.goToPage(${pagination.total_pages})">
+                            ${pagination.total_pages}
+                        </button>
+                    `;
+                }
+
+                // Next button
+                paginationHTML += `
+                    <button class="pagination-btn" ${!pagination.has_next ? 'disabled' : ''}
+                            onclick="dashboard.goToPage(${pagination.current_page + 1})">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                `;
+
+                paginationContainer.innerHTML = paginationHTML;
+            }
+
+            updateTransactionCount(total) {
+                document.getElementById('transactionCount').textContent =
+                    `${total.toLocaleString()} total transactions`;
+            }
+
+            goToPage(page) {
+                this.currentPage = page;
+                this.loadTransactions();
+            }
+
+            formatCurrency(amount) {
+                return new Intl.NumberFormat('en-RW', {
+                    style: 'currency',
+                    currency: 'RWF',
+                    minimumFractionDigits: 0
+                }).format(amount);
+            }
+
+            capitalizeFirst(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+
+            showToast(type, title, message, duration = 5000) {
+                const toastContainer = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+
+                toast.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">${title}</div>
+                            <div style="font-size: 0.875rem; color: var(--text-secondary);">${message}</div>
+                        </div>
+                        <button onclick="this.parentElement.parentElement.remove()"
+                                style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--text-secondary);">
+                            ×
+                        </button>
+                    </div>
+                `;
+
+                toastContainer.appendChild(toast);
+
+                // Trigger animation
+                setTimeout(() => toast.classList.add('show'), 100);
+
+                // Auto remove
+                setTimeout(() => {
+                    if (toast.parentElement) {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }
+                }, duration);
+            }
+        }
+
+        // Global functions
+        function applyFilters() {
+            dashboard.currentPage = 1;
+            dashboard.loadTransactions();
+        }
+
+        function clearFilters() {
+            document.getElementById('transactionTypeFilter').value = 'all';
+            document.getElementById('statusFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('dateFrom').value = '';
+            document.getElementById('dateTo').value = '';
+
+            dashboard.filters = {
+                transactionType: 'all',
+                status: 'all',
+                search: '',
+                dateFrom: '',
+                dateTo: ''
+            };
+
+            dashboard.currentPage = 1;
+            dashboard.loadTransactions();
+        }
+
+        function refreshData() {
+            dashboard.loadDashboardData();
+            dashboard.showToast('info', 'Refreshed', 'Dashboard data has been updated');
+        }
+
+        // Initialize dashboard when DOM is loaded
+        let dashboard;
+        document.addEventListener('DOMContentLoaded', () => {
+            dashboard = new PaymentDashboard();
+        });
+
+        // Handle page visibility changes
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                if (dashboard && dashboard.refreshInterval) {
+                    clearInterval(dashboard.refreshInterval);
+                }
+            } else {
+                if (dashboard) {
+                    dashboard.startAutoRefresh();
+                    dashboard.loadDashboardData();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

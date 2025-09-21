@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd Desktop/sport && pnpm install --no-frozen-lockfile && next build",
+  "installCommand": "cd Desktop/sport && pnpm install --no-frozen-lockfile",
+  "rootDirectory": "Desktop/sport",
+  "env": {
+    "NPM_CONFIG_FROZEN_LOCKFILE": "false"
+  }
+}

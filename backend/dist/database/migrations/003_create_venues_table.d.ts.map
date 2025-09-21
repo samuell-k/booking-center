@@ -1,0 +1,1 @@
+{"version":3,"file":"003_create_venues_table.d.ts","sourceRoot":"","sources":["../../../src/database/migrations/003_create_venues_table.js"],"names":[],"mappings":"AAIa,yBAHD,OAAO,MAAM,EAAE,IAAI,GACjB,OAAO,CAAC,IAAI,CAAC,CAuI1B;AAMc,2BAHH,OAAO,MAAM,EAAE,IAAI,GACjB,OAAO,CAAC,IAAI,CAAC,CAI1B"}

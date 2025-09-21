@@ -1,0 +1,1143 @@
+[2025-06-28 10:56:12] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628105612","amount":100,"password":"102fb7c03e7e2704b812350c7051fefbdac9597aeabf70cf5de6b952d50f3275","mobilephone":"250781014782","requesttransactionid":"TXN17511009727910","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 10:56:12] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511009727910","success":true,"responsecode":"1000","transactionid":"222886220250628085612507515","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-06-28 10:56:40] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628105640","password":"266c89fa2d69cd5d93938c53347750ae5021893edd92b9229557db830fa9fea4","requesttransactionid":"TXN17511009727910","transactionid":"222886220250628085612507515"}
+[2025-06-28 10:56:40] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-06-28 11:11:02] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628111102","amount":100,"password":"4537bd84985eb9bf4497dc593f1e1fcbc42d07af63d1b1315321b01114c03627","mobilephone":"250781014782","requesttransactionid":"TXN17511018624192","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 11:11:03] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511018624192","success":true,"responsecode":"1000","transactionid":"222887920250628091103884687","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-06-28 11:11:13] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628111113","password":"1dd91b3bbc387ebbed7ad0aaa7f6693f9238715b7b072f88b853e1acca9e4ef9","requesttransactionid":"TXN17511018624192","transactionid":"222887920250628091103884687"}
+[2025-06-28 11:11:21] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-06-28 11:19:35] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628111935","amount":100,"password":"be33ae4b23e1c3328f2c415701af217805cc8d7f996e76bbf8fd510f5182d4a4","mobilephone":"250781014782","requesttransactionid":"TXN17511023758160","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 11:19:38] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511023758160","success":true,"responsecode":"1000","transactionid":"222888320250628091937842497","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-06-28 11:19:38] [ERROR] Database error: SQLSTATE[HY000] [1049] Unknown database 'payment_system'
+[2025-06-28 11:19:48] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628111948","password":"1ee90a7e8b29da2177435a87ede50317e106f458c187b6dfb6aa98eb5fdeb915","requesttransactionid":"TXN17511023758160","transactionid":"222888320250628091937842497"}
+[2025-06-28 11:19:56] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:19:58] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628111958","password":"3740200dca1ac944c1cc0a5bd6a7cf2db8058dec33bfe7804e128527f57376ce","requesttransactionid":"TXN17511023758160","transactionid":"222888320250628091937842497"}
+[2025-06-28 11:19:59] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:20:08] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628112008","password":"7d441955f3f4dcb68e863c9a7cf52020a28dc52be91038cefddca915275bb3ae","requesttransactionid":"TXN17511023758160","transactionid":"222888320250628091937842497"}
+[2025-06-28 11:20:17] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:20:18] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628112018","password":"829d69dc51e1c73a57e58e620c09e256eb0f07ce019263e3537218e8b74e136c","requesttransactionid":"TXN17511023758160","transactionid":"222888320250628091937842497"}
+[2025-06-28 11:20:22] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:31:04] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628113104","amount":100,"password":"c2821200214a685200b6574d0d3e7eac2dc5aae49d5aacaa514ef7ab4f4f5f4c","mobilephone":"250781014782","requesttransactionid":"TXN17511030643784","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 11:31:04] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511030643784","success":true,"responsecode":"1000","transactionid":"222888920250628093104712878","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-06-28 11:31:04] [INFO] Transaction stored in database: TXN17511030643784
+[2025-06-28 11:31:15] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113115","password":"5afbe511132ecea42d77f75c61d1eba9043fead48da3eb29875f23a706c58034","requesttransactionid":"TXN17511030643784","transactionid":"222888920250628093104712878"}
+[2025-06-28 11:31:36] [ERROR] CURL Error in status check: Failed to connect to www.intouchpay.co.rw port 443 after 21079 ms: Couldn't connect to server
+[2025-06-28 11:31:36] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113136","password":"bf4c0d83c1e2de967c3e247c65ece110dae0298cf9e3e70ae3745451e3f3b3b8","requesttransactionid":"TXN17511030643784","transactionid":"222888920250628093104712878"}
+[2025-06-28 11:31:39] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:31:40] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113140","password":"5e56ba08cf7956e79c6a87d861093d3e4fc9eccf30a967c2d00d0f44a410280a","requesttransactionid":"TXN17511030643784","transactionid":"222888920250628093104712878"}
+[2025-06-28 11:31:40] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:31:45] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113145","password":"4c1c2bde180aeef548ea57520a42c314edce8c373e387be8f77afa06fc2c7270","requesttransactionid":"TXN17511030643784","transactionid":"222888920250628093104712878"}
+[2025-06-28 11:31:45] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:31:54] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113154","password":"5cfbf272d72d3df59de13d1028cf37860e07a21613373dbda61a72ab6279105c","requesttransactionid":"TXN17511030643784","transactionid":"222888920250628093104712878"}
+[2025-06-28 11:31:56] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:32:04] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113204","password":"a913e9405751a8d1fb1d2db389beda007fb849d2a00494fda3e06a4748bbcbf5","requesttransactionid":"TXN17511030643784","transactionid":"222888920250628093104712878"}
+[2025-06-28 11:32:07] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 11:32:16] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628113216","amount":100,"password":"e2794f297bcb952b9d67a0fdf9e5273a0a3b31219c24617f90b5e0876a93829d","mobilephone":"250781014782","requesttransactionid":"TXN17511031363865","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 11:32:32] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511031363865","success":true,"responsecode":"1000","transactionid":"222889120250628093232427554","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-06-28 11:32:32] [INFO] Transaction stored in database: TXN17511031363865
+[2025-06-28 11:32:42] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628113242","password":"121921c75e04c0d4203dba765dca74d9fd5c413ea55e8cc1e43de53941d256f5","requesttransactionid":"TXN17511031363865","transactionid":"222889120250628093232427554"}
+[2025-06-28 11:32:50] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-06-28 12:32:06] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628123206","amount":100,"password":"5cc7fcec5b5e4260105e14731581c9c1099087b7a8a44404193231699e0b4bc0","mobilephone":"250781014782","requesttransactionid":"TXN17511067262042","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 12:32:25] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511067262042","success":true,"responsecode":"1000","transactionid":"222894920250628103212561635","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-06-28 12:32:25] [INFO] Invalidated 1 cache entries
+[2025-06-28 12:32:25] [INFO] Transaction stored via service layer: TXN17511067262042
+[2025-06-28 12:32:35] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628123235","password":"98554874426119f9995cde344c8327dcc09bc7da6d1cc8779ecf6e9da8467c8c","requesttransactionid":"TXN17511067262042","transactionid":"222894920250628103212561635"}
+[2025-06-28 12:32:36] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-06-28 12:41:34] [WARNING] Warning: InTouch API does not provide transaction amounts in status responses. Using local database amount instead.
+[2025-06-28 12:43:47] [WARNING] Warning: InTouch API does not provide transaction amounts in status responses. Using local database amount instead.
+[2025-06-28 12:44:01] [INFO] API verification failed for DEMO_1751107427_1, trusting local status
+[2025-06-28 12:44:01] [INFO] API verification failed for DEMO_1751107427_2, trusting local status
+[2025-06-28 12:48:26] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250628124826","amount":100,"password":"5476446201661be952d70f368810f979180443790aa3cc42aa7259b7b15312ac","mobilephone":"250722936682","requesttransactionid":"TXN17511077062448","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-06-28 12:48:53] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17511077062448","success":true,"responsecode":"1000","transactionid":"222896820250628104853400871","message":"Your Payment transaction of 100RWF is Pending. Dial *500*5*8# to approve it."}
+[2025-06-28 12:48:53] [INFO] Invalidated 2 cache entries
+[2025-06-28 12:48:53] [INFO] Transaction stored via service layer: TXN17511077062448
+[2025-06-28 12:49:03] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628124903","password":"4a520e2275800d6f14a8ced4645cb62b8225386faa787e3430dbd6bb4d5fc8c9","requesttransactionid":"TXN17511077062448","transactionid":"222896820250628104853400871"}
+[2025-06-28 12:49:10] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 12:49:13] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628124913","password":"40a82daa68a44011aa1268864e38deaab9b958219638d98b21fc452b8268a781","requesttransactionid":"TXN17511077062448","transactionid":"222896820250628104853400871"}
+[2025-06-28 12:49:13] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 12:49:23] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628124923","password":"930b75488ee2910920e5a1a0e7ea101e9e781a111e3cfe497d5b68901926e249","requesttransactionid":"TXN17511077062448","transactionid":"222896820250628104853400871"}
+[2025-06-28 12:49:23] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 12:49:33] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628124933","password":"db3ecc46922c46f8e43eefe1bbc99e926915531f25810f3a37168ea415bb3281","requesttransactionid":"TXN17511077062448","transactionid":"222896820250628104853400871"}
+[2025-06-28 12:49:33] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 12:49:43] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628124943","password":"c61c865ecd4525c834ad9d1d682a80934c14097fa5d538191bd62e8f9c0d21bb","requesttransactionid":"TXN17511077062448","transactionid":"222896820250628104853400871"}
+[2025-06-28 12:49:44] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-06-28 12:49:53] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250628124953","password":"c7106a8d4eae5811712b44664d114bc14446c4d4423b4069349dc25b545edeb7","requesttransactionid":"TXN17511077062448","transactionid":"222896820250628104853400871"}
+[2025-06-28 12:50:14] [ERROR] CURL Error in status check: Failed to connect to www.intouchpay.co.rw port 443 after 21032 ms: Couldn't connect to server
+[2025-06-28 12:50:14] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:50:19] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:50:19] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:50:19] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 12:50:40] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21025 ms: Couldn't connect to server
+[2025-06-28 12:50:40] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-06-28 12:50:40] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-06-28 12:51:55] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:51:57] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:51:57] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:51:57] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:51:57] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 12:51:57] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:51:59] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:51:59] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 12:51:59] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:52:20] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21166 ms: Couldn't connect to server
+[2025-06-28 12:52:20] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-06-28 12:53:32] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:53:47] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:53:47] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:53:48] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:53:48] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 12:53:48] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:53:48] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:53:48] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 12:59:55] [INFO] Requesting account balance from InTouch API
+[2025-06-28 12:59:56] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 12:59:56] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 13:09:52] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:09:53] [INFO] Account balance retrieved successfully: 1302.36 RWF
+[2025-06-28 13:09:53] [INFO] Successfully retrieved account balance: 1302.36 RWF
+[2025-06-28 13:14:55] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:15:11] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 13:15:11] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 13:20:12] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:20:13] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 13:20:13] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 13:26:11] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:26:11] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:26:19] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:26:19] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:26:21] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 13:26:21] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 13:26:32] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21039 ms: Couldn't connect to server
+[2025-06-28 13:26:32] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-06-28 13:26:32] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-06-28 13:32:31] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:32:31] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:32:32] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 13:32:32] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 13:36:09] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:36:13] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:36:25] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:36:37] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:36:58] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:37:13] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:37:25] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:58:05] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:58:05] [INFO] Requesting account balance from InTouch API
+[2025-06-28 13:58:05] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 13:58:05] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 13:58:07] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:58:11] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:58:17] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:58:43] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 13:59:07] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::query() in C:\xampp\htdocs\payment-system\update_database_for_withdrawals.php on line 25
+Stack trace:
+#0 {main}
+[2025-06-28 13:59:15] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 14:00:17] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::query() in C:\xampp\htdocs\payment-system\check_db_structure.php on line 10
+Stack trace:
+#0 {main}
+[2025-06-28 14:00:39] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::query() in C:\xampp\htdocs\payment-system\fix_database.php on line 18
+Stack trace:
+#0 {main}
+[2025-06-28 14:01:00] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 14:01:53] [ERROR] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reason' in 'field list' SQL: 
+            SELECT
+                id,
+                request_transaction_id,
+                intouchpay_transaction_id,
+                phone_number,
+                amount,
+                transaction_type,
+                status,
+                response_code,
+                reason,
+                withdraw_charge,
+                user_name,
+                created_at,
+                completed_at,
+                CASE
+                    WHEN status IN ('successful', 'successfull') THEN 'success'
+                    WHEN status IN ('failed', 'failure') THEN 'danger'
+                    WHEN status = 'pending' THEN 'warning'
+                    ELSE 'secondary'
+                END as status_class,
+                CASE
+                    WHEN transaction_type = 'payment' THEN 'fas fa-arrow-down text-success'
+                    WHEN transaction_type = 'withdrawal' THEN 'fas fa-arrow-up text-primary'
+                    ELSE 'fas fa-exchange-alt'
+                END as type_icon
+            FROM transactions
+            
+            ORDER BY created_at DESC
+            LIMIT 20 OFFSET 0
+        
+[2025-06-28 14:04:22] [INFO] Requesting account balance from InTouch API
+[2025-06-28 14:04:23] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 14:04:23] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 14:16:14] [INFO] Requesting account balance from InTouch API
+[2025-06-28 14:16:23] [INFO] Account balance retrieved successfully: 402.36 RWF
+[2025-06-28 14:16:23] [INFO] Successfully retrieved account balance: 402.36 RWF
+[2025-06-28 14:16:54] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 300 RWF, Reason: Kwisubiza amafaranga.
+[2025-06-28 14:16:54] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250628141654","amount":300,"withdrawcharge":1,"reason":"Kwisubiza amafaranga.","sid":1,"password":"5e8fff92b1bb0b5f32326efde31efe25e1544fa5db6c99145634d93684159ad4","mobilephone":"250781014782","requesttransactionid":"TXN17511130146980","accountno":"250160000011"}
+[2025-06-28 14:16:56] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21407389885","success":true,"responsecode":"2001","transactionid":"222904020250628121655579846","statusdesc":"Successfull"}
+[2025-06-28 14:16:56] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-06-28 16:08:18] [INFO] Requesting account balance from InTouch API
+[2025-06-28 16:08:20] [INFO] Account balance retrieved successfully: 1002.36 RWF
+[2025-06-28 16:08:20] [INFO] Successfully retrieved account balance: 1002.36 RWF
+[2025-06-28 16:16:20] [INFO] Requesting account balance from InTouch API
+[2025-06-28 16:16:20] [INFO] Account balance retrieved successfully: 1002.36 RWF
+[2025-06-28 16:16:20] [INFO] Successfully retrieved account balance: 1002.36 RWF
+[2025-06-28 16:52:18] [INFO] Requesting account balance from InTouch API
+[2025-06-28 16:52:19] [INFO] Account balance retrieved successfully: 1002.36 RWF
+[2025-06-28 16:52:19] [INFO] Successfully retrieved account balance: 1002.36 RWF
+[2025-06-28 17:05:51] [INFO] Requesting account balance from InTouch API
+[2025-06-28 17:05:51] [INFO] Account balance retrieved successfully: 500.36 RWF
+[2025-06-28 17:05:51] [INFO] Successfully retrieved account balance: 500.36 RWF
+[2025-06-28 17:07:00] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 500 RWF, Reason: Withdrawal request
+[2025-06-28 17:07:00] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250628170700","amount":500,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"625285c39025a9d84d84aa7c0750c77ea4454418670d26e73f967eac37956702","mobilephone":"250781014782","requesttransactionid":"TXN17511232207899","accountno":"250160000011"}
+[2025-06-28 17:07:01] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21410425124","success":true,"responsecode":"2001","transactionid":"222922320250628150701764058","statusdesc":"Successfull"}
+[2025-06-28 17:07:01] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-06-28 21:08:28] [INFO] Requesting account balance from InTouch API
+[2025-06-28 21:08:30] [INFO] Account balance retrieved successfully: 1500.36 RWF
+[2025-06-28 21:08:30] [INFO] Successfully retrieved account balance: 1500.36 RWF
+[2025-06-29 15:38:43] [INFO] Requesting account balance from InTouch API
+[2025-06-29 15:38:44] [INFO] Requesting account balance from InTouch API
+[2025-06-29 15:38:44] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-06-29 15:38:44] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-06-29 15:38:44] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-06-29 15:38:44] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-06-29 15:43:56] [INFO] Requesting account balance from InTouch API
+[2025-06-29 15:43:56] [INFO] Requesting account balance from InTouch API
+[2025-06-29 15:43:57] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-06-29 15:43:57] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-06-29 15:43:57] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-06-29 15:43:57] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-06-29 17:41:27] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:27] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:27] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:27] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:31] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:31] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:31] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:31] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:36] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:36] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:36] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:36] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:43] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:43] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:43] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:43] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:52] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:52] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:52] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:52] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:56] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:56] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:41:56] [ERROR] API Error: Database connection failed
+[2025-06-29 17:41:56] [ERROR] API Error: Database connection failed
+[2025-06-29 17:54:59] [INFO] Requesting account balance from InTouch API
+[2025-06-29 17:55:10] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:10] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:16] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-06-29 17:55:16] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-06-29 17:55:16] [ERROR] Database query failed: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away SQL: 
+                SELECT SUM(amount) as today_local_amount
+                FROM transactions
+                WHERE DATE(created_at) = CURDATE()
+                AND status IN ('successful', 'successfull')
+            
+[2025-06-29 17:55:16] [ERROR] Error estimating today's amount: Database query failed: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[2025-06-29 17:55:20] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:20] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:20] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:20] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:24] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:24] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:37] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:37] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:37] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:37] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:41] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:41] [ERROR] API Error: Database connection failed
+[2025-06-29 17:55:42] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:55:42] [ERROR] API Error: Database connection failed
+[2025-06-29 17:56:03] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:56:03] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 17:56:03] [ERROR] API Error: Database connection failed
+[2025-06-29 17:56:03] [ERROR] API Error: Database connection failed
+[2025-06-29 18:00:17] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 18:00:17] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 18:00:17] [ERROR] API Error: Database connection failed
+[2025-06-29 18:00:17] [ERROR] API Error: Database connection failed
+[2025-06-29 18:00:54] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 18:00:54] [ERROR] API Error: Database connection failed
+[2025-06-29 18:00:54] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 18:00:54] [ERROR] API Error: Database connection failed
+[2025-06-29 18:02:36] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 18:02:36] [ERROR] Database connection failed: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[2025-06-29 18:02:36] [ERROR] API Error: Database connection failed
+[2025-06-29 18:02:36] [ERROR] API Error: Database connection failed
+[2025-06-29 18:03:07] [INFO] Requesting account balance from InTouch API
+[2025-06-29 18:03:07] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-06-29 18:03:07] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-07-02 07:29:18] [INFO] Requesting account balance from InTouch API
+[2025-07-02 07:29:18] [ERROR] CURL Error in API call: Could not resolve host: www.intouchpay.co.rw
+[2025-07-02 07:29:18] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-02 07:29:18] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-03 12:00:24] [INFO] Requesting account balance from InTouch API
+[2025-07-03 12:00:24] [ERROR] HTTP Error in API call: 403
+[2025-07-03 12:00:24] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-03 12:00:24] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-03 13:32:55] [INFO] Requesting account balance from InTouch API
+[2025-07-03 13:32:56] [ERROR] HTTP Error in API call: 403
+[2025-07-03 13:32:56] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-03 13:32:56] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-03 13:38:37] [INFO] Requesting account balance from InTouch API
+[2025-07-03 13:38:37] [ERROR] HTTP Error in API call: 403
+[2025-07-03 13:38:37] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-03 13:38:37] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-04 10:44:45] [INFO] Requesting account balance from InTouch API
+[2025-07-04 10:44:57] [ERROR] CURL Error in API call: Could not resolve host: www.intouchpay.co.rw
+[2025-07-04 10:44:57] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-04 10:44:57] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-04 10:45:10] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104510","amount":100,"password":"56577961c6e440fe11d1e4ad55172a5936d2e73019a6acd5ecb3b33c459d91e2","mobilephone":"250781014782","requesttransactionid":"TXN17516187109822","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:45:22] [ERROR] CURL Error: Could not resolve host: www.intouchpay.co.rw
+[2025-07-04 10:45:52] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104552","amount":100,"password":"25719407c0eb9a8ad630aa15f6f8d21e7e13767411707ae25f42b9c229814faa","mobilephone":"250781014782","requesttransactionid":"TXN17516187523122","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:45:52] [ERROR] HTTP Error: 403
+[2025-07-04 10:46:04] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104604","amount":100,"password":"3317a19a92781520294fcb9b2bfcab0f7fcd26ff1b1aca9d8ccf460ff85b8e79","mobilephone":"250781014782","requesttransactionid":"TXN17516187642261","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:46:05] [ERROR] HTTP Error: 403
+[2025-07-04 10:46:39] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104639","amount":100,"password":"4978733c670d6eb307f326eb9448bb31103a4f9388524891e5a1c65551b27af7","mobilephone":"250781014782","requesttransactionid":"TXN17516187995118","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:46:42] [ERROR] HTTP Error: 403
+[2025-07-04 10:46:49] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104649","amount":100,"password":"eda60a908f769a10c3069c5ccdaad9f85f9901ddff480039d724a5a86a0efc5c","mobilephone":"250781014782","requesttransactionid":"TXN17516188096098","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:46:49] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104649","amount":100,"password":"eda60a908f769a10c3069c5ccdaad9f85f9901ddff480039d724a5a86a0efc5c","mobilephone":"250781014782","requesttransactionid":"TXN17516188099370","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:46:50] [ERROR] HTTP Error: 403
+[2025-07-04 10:46:51] [ERROR] HTTP Error: 403
+[2025-07-04 10:46:56] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250704104656","amount":100,"password":"e624e24870bb19f585fbe76ddf9bbf0c354cf7600c6e64b3d1ecc74ea3b1c041","mobilephone":"250781014782","requesttransactionid":"TXN17516188162506","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-04 10:46:56] [ERROR] HTTP Error: 403
+[2025-07-06 10:31:22] [INFO] Requesting account balance from InTouch API
+[2025-07-06 10:31:22] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-07-06 10:31:22] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-07-06 10:31:32] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250706103132","amount":100,"password":"d5d0faa65787318baa13322f225a7b35ef86fee7119a5743d03a637e1678fe88","mobilephone":"250781014782","requesttransactionid":"TXN17517906925881","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-06 10:31:33] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17517906925881","success":true,"responsecode":"1000","transactionid":"223708620250706083133298902","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-07-06 10:31:33] [INFO] Invalidated 1 cache entries
+[2025-07-06 10:31:33] [INFO] Transaction stored via service layer: TXN17517906925881
+[2025-07-06 10:31:43] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250706103143","password":"f887888f03dc46222c4a940978923d895f3c4852d4e9085f24498c918be60e4a","requesttransactionid":"TXN17517906925881","transactionid":"223708620250706083133298902"}
+[2025-07-06 10:31:43] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-07-06 10:31:46] [INFO] Requesting account balance from InTouch API
+[2025-07-06 10:31:46] [INFO] Account balance retrieved successfully: 0.36000000000001 RWF
+[2025-07-06 10:31:46] [INFO] Successfully retrieved account balance: 0.36000000000001 RWF
+[2025-07-06 10:34:34] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Kwisubiza amafaranga.
+[2025-07-06 10:34:34] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706103434","amount":100,"withdrawcharge":1,"reason":"Kwisubiza amafaranga.","sid":1,"password":"00bf1d397f3f799e87e69b453af8f8f097c450baeb825161876250d6eec2235b","mobilephone":"250781014782","requesttransactionid":"TXN17517908742391","accountno":"250160000011"}
+[2025-07-06 10:34:35] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21552098906","success":true,"responsecode":"2001","transactionid":"223708720250706083435398175","statusdesc":"Successfull"}
+[2025-07-06 10:34:35] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-06 10:34:41] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Kwisubiza amafaranga.
+[2025-07-06 10:34:41] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706103441","amount":100,"withdrawcharge":1,"reason":"Kwisubiza amafaranga.","sid":1,"password":"4da86984b76bc92314dec3ccfb02388be58bd9586620a4e86733d395b5dcf25f","mobilephone":"250781014782","requesttransactionid":"TXN17517908818215","accountno":"250160000011"}
+[2025-07-06 10:34:42] [INFO] Withdrawal response: {"status":"Failed","requesttransactionid":"TXN17517908818215","statusdesc":"Insufficient Account Balance","responsecode":"1108","success":false}
+[2025-07-06 10:34:42] [ERROR] Withdrawal failed - Code: 1108, Message: Insufficient Account Balance
+[2025-07-06 10:34:42] [ERROR] Withdrawal request failed: Insufficient Account Balance
+[2025-07-06 10:34:55] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Kwisubiza amafaranga.
+[2025-07-06 10:34:55] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706103455","amount":100,"withdrawcharge":1,"reason":"Kwisubiza amafaranga.","sid":1,"password":"4d91c4ce2de4dce32220498a2428bcb74da4d42d8fce609e560fac17e809b571","mobilephone":"250781014782","requesttransactionid":"TXN17517908956659","accountno":"250160000011"}
+[2025-07-06 10:34:56] [INFO] Withdrawal response: {"status":"Failed","requesttransactionid":"TXN17517908956659","statusdesc":"Insufficient Account Balance","responsecode":"1108","success":false}
+[2025-07-06 10:34:56] [ERROR] Withdrawal failed - Code: 1108, Message: Insufficient Account Balance
+[2025-07-06 10:34:56] [ERROR] Withdrawal request failed: Insufficient Account Balance
+[2025-07-06 10:36:54] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Withdrawal request
+[2025-07-06 10:36:54] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706103654","amount":100,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"3d83d429a589c87ef757558a9cd2143c3d77abb5badb46659e19b25047f7f7c4","mobilephone":"250781014782","requesttransactionid":"TXN17517910144929","accountno":"250160000011"}
+[2025-07-06 10:36:55] [INFO] Withdrawal response: {"status":"Failed","requesttransactionid":"TXN17517910144929","statusdesc":"Insufficient Account Balance","responsecode":"1108","success":false}
+[2025-07-06 10:36:55] [ERROR] Withdrawal failed - Code: 1108, Message: Insufficient Account Balance
+[2025-07-06 10:36:55] [ERROR] Withdrawal request failed: Insufficient Account Balance
+[2025-07-06 10:37:02] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Withdrawal request
+[2025-07-06 10:37:02] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706103702","amount":100,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"b83cc2927e0ac498429e557e67c37848ff347e0831679915afe430b63155eba4","mobilephone":"250781014782","requesttransactionid":"TXN17517910223681","accountno":"250160000011"}
+[2025-07-06 10:37:03] [INFO] Withdrawal response: {"status":"Failed","requesttransactionid":"TXN17517910223681","statusdesc":"Insufficient Account Balance","responsecode":"1108","success":false}
+[2025-07-06 10:37:03] [ERROR] Withdrawal failed - Code: 1108, Message: Insufficient Account Balance
+[2025-07-06 10:37:03] [ERROR] Withdrawal request failed: Insufficient Account Balance
+[2025-07-06 10:42:16] [INFO] Requesting account balance from InTouch API
+[2025-07-06 10:42:17] [INFO] Account balance retrieved successfully: 0.36 RWF
+[2025-07-06 10:42:17] [INFO] Successfully retrieved account balance: 0.36 RWF
+[2025-07-06 10:42:31] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Withdrawal request
+[2025-07-06 10:42:31] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706104231","amount":100,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"14fbd2c38ff03a687905d5b024c90b462159aa3f516acfe178f00e104b0a738e","mobilephone":"250781014782","requesttransactionid":"TXN17517913515190","accountno":"250160000011"}
+[2025-07-06 10:42:35] [INFO] Withdrawal response: {"status":"Failed","requesttransactionid":"TXN17517913515190","statusdesc":"Insufficient Account Balance","responsecode":"1108","success":false}
+[2025-07-06 10:42:35] [ERROR] Withdrawal failed - Code: 1108, Message: Insufficient Account Balance
+[2025-07-06 10:42:35] [ERROR] Withdrawal request failed: Insufficient Account Balance
+[2025-07-06 10:45:07] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250706104507","amount":100,"password":"70c2d4320fbc11799c2196fb6847c45c6a4cd34983540402f9c8b3542f318e3e","mobilephone":"250781014782","requesttransactionid":"TXN17517915073211","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-06 10:45:08] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17517915073211","success":true,"responsecode":"1000","transactionid":"223710020250706084508222539","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-07-06 10:45:08] [INFO] Invalidated 1 cache entries
+[2025-07-06 10:45:08] [INFO] Transaction stored via service layer: TXN17517915073211
+[2025-07-06 10:45:18] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250706104518","password":"64942890ce33b5bbe91a72ad4ca06a23439e4693839bd00c1332cabb6204aec8","requesttransactionid":"TXN17517915073211","transactionid":"223710020250706084508222539"}
+[2025-07-06 10:45:20] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-07-06 10:45:29] [INFO] Requesting account balance from InTouch API
+[2025-07-06 10:45:29] [INFO] Account balance retrieved successfully: 100.36 RWF
+[2025-07-06 10:45:29] [INFO] Successfully retrieved account balance: 100.36 RWF
+[2025-07-06 10:46:00] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Withdrawal request
+[2025-07-06 10:46:00] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706104600","amount":100,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"20015e96c83934485f5b6ae28880d61bc8e6b8f117d1244881e5139ed20d8656","mobilephone":"250781014782","requesttransactionid":"TXN17517915604793","accountno":"250160000011"}
+[2025-07-06 10:46:01] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21552298650","success":true,"responsecode":"2001","transactionid":"223710120250706084601217844","statusdesc":"Successfull"}
+[2025-07-06 10:46:01] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-06 11:17:06] [INFO] Requesting account balance from InTouch API
+[2025-07-06 11:17:07] [INFO] Account balance retrieved successfully: 100.36 RWF
+[2025-07-06 11:17:07] [INFO] Successfully retrieved account balance: 100.36 RWF
+[2025-07-06 11:27:08] [INFO] Requesting account balance from InTouch API
+[2025-07-06 11:27:08] [INFO] Account balance retrieved successfully: 1300.36 RWF
+[2025-07-06 11:27:08] [INFO] Successfully retrieved account balance: 1300.36 RWF
+[2025-07-06 12:54:00] [INFO] Requesting account balance from InTouch API
+[2025-07-06 12:54:00] [INFO] Account balance retrieved successfully: 300.36 RWF
+[2025-07-06 12:54:00] [INFO] Successfully retrieved account balance: 300.36 RWF
+[2025-07-06 14:19:22] [INFO] Requesting account balance from InTouch API
+[2025-07-06 14:19:22] [INFO] Account balance retrieved successfully: 300.36 RWF
+[2025-07-06 14:19:22] [INFO] Successfully retrieved account balance: 300.36 RWF
+[2025-07-06 14:34:08] [INFO] Requesting account balance from InTouch API
+[2025-07-06 14:34:08] [INFO] Account balance retrieved successfully: 1020.36 RWF
+[2025-07-06 14:34:08] [INFO] Successfully retrieved account balance: 1020.36 RWF
+[2025-07-06 16:21:44] [INFO] Requesting account balance from InTouch API
+[2025-07-06 16:21:44] [INFO] Account balance retrieved successfully: 440.36 RWF
+[2025-07-06 16:21:44] [INFO] Successfully retrieved account balance: 440.36 RWF
+[2025-07-06 16:22:36] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250706162236","amount":100,"password":"6406c809fd35984ff18b899c9e754adecebc170f6686f80ee1cb01322ba90eff","mobilephone":"250781014782","requesttransactionid":"TXN17518117562929","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-06 16:22:36] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17518117562929","success":true,"responsecode":"1000","transactionid":"223726220250706142236577681","message":"Your Payment transaction of 100RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-07-06 16:22:37] [INFO] Invalidated 1 cache entries
+[2025-07-06 16:22:37] [INFO] Transaction stored via service layer: TXN17518117562929
+[2025-07-06 16:22:47] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250706162247","password":"dffdcf0af325d789a5db058734c5926d1571cd3352ef399fe1973467ba6fcc90","requesttransactionid":"TXN17518117562929","transactionid":"223726220250706142236577681"}
+[2025-07-06 16:23:02] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-07-06 16:23:02] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250706162302","password":"9cc2530201e163aec57b7c8b792671cdabcd2e0b27f6c17432c25c6f6bf2cd67","requesttransactionid":"TXN17518117562929","transactionid":"223726220250706142236577681"}
+[2025-07-06 16:23:02] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-07-06 16:23:07] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250706162307","password":"2114cbe6f220bab18caf5ef2f2c6da8f3cdceb30d35f15d56e5eca9208edd444","requesttransactionid":"TXN17518117562929","transactionid":"223726220250706142236577681"}
+[2025-07-06 16:23:26] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-07-06 16:24:25] [INFO] Requesting account balance from InTouch API
+[2025-07-06 16:24:25] [INFO] Account balance retrieved successfully: 540.36 RWF
+[2025-07-06 16:24:25] [INFO] Successfully retrieved account balance: 540.36 RWF
+[2025-07-06 16:27:52] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 100 RWF, Reason: Withdrawal request
+[2025-07-06 16:27:52] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250706162752","amount":100,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"335f75ed308816b322ecf25ff0cae7ed7cea388a7b0e4da3818d586c66d78bbc","mobilephone":"250781014782","requesttransactionid":"TXN17518120722174","accountno":"250160000011"}
+[2025-07-06 16:27:53] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21558313009","success":true,"responsecode":"2001","transactionid":"223726920250706142752817122","statusdesc":"Successfull"}
+[2025-07-06 16:27:53] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-06 16:29:52] [INFO] Requesting account balance from InTouch API
+[2025-07-06 16:29:52] [INFO] Account balance retrieved successfully: 440.36 RWF
+[2025-07-06 16:29:52] [INFO] Successfully retrieved account balance: 440.36 RWF
+[2025-07-06 17:10:10] [INFO] Requesting account balance from InTouch API
+[2025-07-06 17:10:10] [INFO] Account balance retrieved successfully: 440.36 RWF
+[2025-07-06 17:10:10] [INFO] Successfully retrieved account balance: 440.36 RWF
+[2025-07-16 23:19:07] [INFO] Requesting account balance from InTouch API
+[2025-07-16 23:19:07] [ERROR] HTTP Error in API call: 403
+[2025-07-16 23:19:07] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-16 23:19:07] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-16 23:19:07] [ERROR] HTTP Error in API call: 403
+[2025-07-16 23:19:07] [INFO] API verification failed for TXN17517906925881, trusting local status
+[2025-07-16 23:34:00] [INFO] Requesting account balance from InTouch API
+[2025-07-16 23:34:00] [ERROR] HTTP Error in API call: 403
+[2025-07-16 23:34:00] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-07-16 23:34:00] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-07-16 23:34:01] [ERROR] HTTP Error in API call: 403
+[2025-07-16 23:34:01] [INFO] API verification failed for TXN17517906925881, trusting local status
+[2025-07-17 03:16:41] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250717031641","amount":100,"password":"d9336aeab49e4956cedb515cfcf3bcad7af00b95edfc87e73f721a86cc819570","mobilephone":"250788881056","requesttransactionid":"TXN17527150013021","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-17 03:16:42] [ERROR] HTTP Error: 403
+[2025-07-17 03:17:11] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250717031711","amount":100,"password":"334aebca23c17f82496acf213db1b789bebf52e26fa8a2b6060fc004d2fdc6e6","mobilephone":"250781014782","requesttransactionid":"TXN17527150317846","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-17 03:17:12] [ERROR] HTTP Error: 403
+[2025-07-27 15:46:28] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250727154628","amount":868,"password":"0164985f8b7ed3f3331cd19ee8d9b6c5318b30709838aad425718246f19d2992","mobilephone":"250781014782","requesttransactionid":"TXN17536239881773","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-07-27 15:46:31] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17536239881773","success":true,"responsecode":"1000","transactionid":"225864320250727134633152312","message":"Your Payment transaction of 868RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-07-27 15:46:31] [INFO] Invalidated 1 cache entries
+[2025-07-27 15:46:31] [INFO] Transaction stored via service layer: TXN17536239881773
+[2025-07-27 15:46:41] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250727154641","password":"45c8fcf9aaadb315eb7f8086696fc975f9dc12e9e3c97974b3e0afba453ed2ab","requesttransactionid":"TXN17536239881773","transactionid":"225864320250727134633152312"}
+[2025-07-27 15:46:45] [INFO] Status check response: {"status":"Successfull","message":"Successfull","responsecode":"01","success":true}
+[2025-07-27 15:46:58] [INFO] Requesting account balance from InTouch API
+[2025-07-27 15:47:00] [INFO] Account balance retrieved successfully: 941.36 RWF
+[2025-07-27 15:47:00] [INFO] Successfully retrieved account balance: 941.36 RWF
+[2025-07-27 15:47:29] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 868 RWF, Reason: Withdrawal request
+[2025-07-27 15:47:29] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250727154729","amount":868,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"bb11ee14a7abb21f82fa906bf19c83484063a78897630322c200972328beef56","mobilephone":"250781014782","requesttransactionid":"TXN17536240496199","accountno":"250160000011"}
+[2025-07-27 15:47:31] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21941732206","success":true,"responsecode":"2001","transactionid":"225864620250727134733125911","statusdesc":"Successfull"}
+[2025-07-27 15:47:31] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-28 00:53:57] [INFO] Requesting account balance from InTouch API
+[2025-07-28 00:53:58] [INFO] Account balance retrieved successfully: 832.36 RWF
+[2025-07-28 00:53:58] [INFO] Successfully retrieved account balance: 832.36 RWF
+[2025-07-28 00:54:10] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 759 RWF, Reason: Withdrawal request
+[2025-07-28 00:54:10] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250728005410","amount":759,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"48f4146f3430bf81196c3c9d7f9c01da02e737a26a60d7c96096a08bf2a4e2f5","mobilephone":"250781014782","requesttransactionid":"TXN17536568509066","accountno":"250160000011"}
+[2025-07-28 00:54:11] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21950102161","success":true,"responsecode":"2001","transactionid":"225937220250727225414050481","statusdesc":"Successfull"}
+[2025-07-28 00:54:11] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-28 01:00:29] [INFO] Requesting account balance from InTouch API
+[2025-07-28 01:00:29] [INFO] Account balance retrieved successfully: 1517.36 RWF
+[2025-07-28 01:00:29] [INFO] Successfully retrieved account balance: 1517.36 RWF
+[2025-07-28 01:01:07] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 1444 RWF, Reason: Withdrawal request
+[2025-07-28 01:01:07] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250728010107","amount":1444,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"00194e7b06172337bfd433cbb5a1205e4743206eb9059d4f2773982ed75ffb97","mobilephone":"250781014782","requesttransactionid":"TXN17536572677357","accountno":"250160000011"}
+[2025-07-28 01:01:08] [INFO] Withdrawal response: {"message":"The total amount to be paid should be less than 1000 RWF","responsecode":"2300","success":false}
+[2025-07-28 01:01:08] [ERROR] Withdrawal failed - Code: 2300, Message: Withdrawal request failed
+[2025-07-28 01:01:08] [ERROR] Withdrawal request failed: Withdrawal request failed
+[2025-07-28 01:01:11] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 1444 RWF, Reason: Withdrawal request
+[2025-07-28 01:01:11] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250728010111","amount":1444,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"54175dd85e126490d31ee6e4978d13e99777cead5af7c212b6622e36d88208ec","mobilephone":"250781014782","requesttransactionid":"TXN17536572714122","accountno":"250160000011"}
+[2025-07-28 01:01:11] [INFO] Withdrawal response: {"message":"The total amount to be paid should be less than 1000 RWF","responsecode":"2300","success":false}
+[2025-07-28 01:01:11] [ERROR] Withdrawal failed - Code: 2300, Message: Withdrawal request failed
+[2025-07-28 01:01:11] [ERROR] Withdrawal request failed: Withdrawal request failed
+[2025-07-28 01:01:42] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 1444 RWF, Reason: Withdrawal request
+[2025-07-28 01:01:42] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250728010142","amount":1444,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"4d16dfb9451efc6ab9d44295be3da03cd69fe2af1176321d89e0b962b58983a5","mobilephone":"250781014782","requesttransactionid":"TXN17536573024242","accountno":"250160000011"}
+[2025-07-28 01:01:43] [INFO] Withdrawal response: {"message":"The total amount to be paid should be less than 1000 RWF","responsecode":"2300","success":false}
+[2025-07-28 01:01:43] [ERROR] Withdrawal failed - Code: 2300, Message: Withdrawal request failed
+[2025-07-28 01:01:43] [ERROR] Withdrawal request failed: Withdrawal request failed
+[2025-07-28 01:02:12] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 722 RWF, Reason: Withdrawal request
+[2025-07-28 01:02:12] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250728010212","amount":722,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"15288ece682afb5370f86eab6de9d1adad286232eeff01b2d8ee62f1387dec49","mobilephone":"250781014782","requesttransactionid":"TXN17536573329703","accountno":"250160000011"}
+[2025-07-28 01:02:13] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21950118651","success":true,"responsecode":"2001","transactionid":"225937820250727230215376326","statusdesc":"Successfull"}
+[2025-07-28 01:02:13] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-28 01:02:57] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 722 RWF, Reason: Withdrawal request
+[2025-07-28 01:02:57] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250728010257","amount":722,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"8e4ad35edf42e9c08ed9f48ed9083f5bf48ebac4627cfb4b003bfc48fa73f5bd","mobilephone":"250781014782","requesttransactionid":"TXN17536573778058","accountno":"250160000011"}
+[2025-07-28 01:02:58] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21950120131","success":true,"responsecode":"2001","transactionid":"225937920250727230300764454","statusdesc":"Successfull"}
+[2025-07-28 01:02:58] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-07-29 11:30:40] [INFO] Requesting account balance from InTouch API
+[2025-07-29 11:30:41] [INFO] Account balance retrieved successfully: 952.36 RWF
+[2025-07-29 11:30:41] [INFO] Successfully retrieved account balance: 952.36 RWF
+[2025-07-29 11:32:36] [INFO] Processing withdrawal request - Phone: 250781037203, Amount: 750 RWF, Reason: Withdrawal request
+[2025-07-29 11:32:36] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250729113236","amount":750,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"2fd3a20f579d142c07c0a7d02e0600013718d75197165a5c5700a4433bbff2d8","mobilephone":"250781037203","requesttransactionid":"TXN17537815562302","accountno":"250160000011"}
+[2025-07-29 11:32:38] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"21974619935","success":true,"responsecode":"2001","transactionid":"226108020250729093240149359","statusdesc":"Successfull"}
+[2025-07-29 11:32:38] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-08-31 22:51:44] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250831225144","amount":100,"password":"b75cf4076a297c422ba3d1f7915b1d2c89b1cca266bb7ecc51013d8e6818ccda","mobilephone":"250781014782","requesttransactionid":"TXN17566735043667","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-08-31 22:52:09] [ERROR] CURL Error: Failed to connect to www.intouchpay.co.rw port 443 after 24761 ms: Couldn't connect to server
+[2025-08-31 22:53:19] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250831225319","amount":100,"password":"edb3a3c2698679d95e3787f3612cb0f810916a4772fe13d5c14b6cae6da53bf7","mobilephone":"250781014782","requesttransactionid":"TXN17566735999132","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-08-31 22:53:41] [ERROR] CURL Error: Failed to connect to www.intouchpay.co.rw port 443 after 21054 ms: Couldn't connect to server
+[2025-09-01 00:09:33] [INFO] Requesting account balance from InTouch API
+[2025-09-01 00:09:33] [INFO] Account balance retrieved successfully: 5.36 RWF
+[2025-09-01 00:09:33] [INFO] Successfully retrieved account balance: 5.36 RWF
+[2025-09-01 00:09:55] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250901000955","amount":200,"password":"f393b3d223e710df64c2b00170a88c9d1e7f515f1291ab8522c83e9d13c5d204","mobilephone":"250781014782","requesttransactionid":"TXN17566781958669","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-09-01 00:09:57] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17566781958669","success":true,"responsecode":"1000","transactionid":"239846920250831220958730403","message":"Your Payment transaction of 200RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-09-01 00:09:57] [INFO] Invalidated 1 cache entries
+[2025-09-01 00:09:57] [INFO] Transaction stored via service layer: TXN17566781958669
+[2025-09-01 00:10:07] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250901001007","password":"bece9608e6d07f783c728e0959185541f111fbdb230844caaa76366f4f173f02","requesttransactionid":"TXN17566781958669","transactionid":"239846920250831220958730403"}
+[2025-09-01 00:10:28] [ERROR] CURL Error in status check: Failed to connect to www.intouchpay.co.rw port 443 after 21065 ms: Couldn't connect to server
+[2025-09-01 00:10:28] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250901001028","password":"623b4130645f85a5562b6722e19eab3a5c5e6f64abe70d0164fcbd6d370cf42a","requesttransactionid":"TXN17566781958669","transactionid":"239846920250831220958730403"}
+[2025-09-01 00:10:30] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-09-01 00:10:33] [INFO] Initiating payment request: {"username":"testa","timestamp":"20250901001033","amount":200,"password":"0d2e82500b75b68e42e672f6052028f8c7a8156f4e66fd2e456591614d844bcf","mobilephone":"250781083227","requesttransactionid":"TXN17566782338239","accountno":"250160000011","callbackurl":"http:\/\/localhost\/payment-system\/callback.php"}
+[2025-09-01 00:10:33] [INFO] Payment response: {"status":"Pending","requesttransactionid":"TXN17566782338239","success":true,"responsecode":"1000","transactionid":"239847020250831221035088423","message":"Your Payment transaction of 200RWF is Pending. Dial *182*7*1# to approve it."}
+[2025-09-01 00:10:33] [INFO] Invalidated 0 cache entries
+[2025-09-01 00:10:33] [INFO] Transaction stored via service layer: TXN17566782338239
+[2025-09-01 00:10:43] [INFO] Checking transaction status: {"username":"testa","timestamp":"20250901001043","password":"9cd43b2e9d613bc2736aaa23b6c75e446000ced11b99cf5403292d73f6541564","requesttransactionid":"TXN17566782338239","transactionid":"239847020250831221035088423"}
+[2025-09-01 00:10:45] [INFO] Status check response: {"status":"Pending","message":"Pending","responsecode":"1000","success":true}
+[2025-09-01 00:10:54] [INFO] Requesting account balance from InTouch API
+[2025-09-01 00:10:54] [INFO] Account balance retrieved successfully: 205.36 RWF
+[2025-09-01 00:10:54] [INFO] Successfully retrieved account balance: 205.36 RWF
+[2025-09-01 00:11:20] [INFO] Processing withdrawal request - Phone: 250781083227, Amount: 200 RWF, Reason: Withdrawal request
+[2025-09-01 00:11:20] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250901001120","amount":200,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"0f7d59b9328efa6a1c9e10774444a22bec26c64a85a61d73ffc2759abac52d09","mobilephone":"250781083227","requesttransactionid":"TXN17566782804192","accountno":"250160000011"}
+[2025-09-01 00:11:22] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"22627647671","success":true,"responsecode":"2001","transactionid":"239847120250831221123336112","statusdesc":"Successfull"}
+[2025-09-01 00:11:22] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-09-03 17:45:27] [INFO] Requesting account balance from InTouch API
+[2025-09-03 17:45:28] [INFO] Account balance retrieved successfully: 55.36 RWF
+[2025-09-03 17:45:28] [INFO] Successfully retrieved account balance: 55.36 RWF
+[2025-09-06 20:37:13] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:37:14] [INFO] Account balance retrieved successfully: 655.36 RWF
+[2025-09-06 20:37:14] [INFO] Successfully retrieved account balance: 655.36 RWF
+[2025-09-06 20:38:32] [INFO] Processing withdrawal request - Phone: 250781083227, Amount: 150 RWF, Reason: Withdrawal request
+[2025-09-06 20:38:32] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250906203832","amount":150,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"c123592072bd1f98c0d04207e23a49079f4c516f3e35c7f32f5c76701810ff60","mobilephone":"250781083227","requesttransactionid":"TXN17571839129716","accountno":"250160000011"}
+[2025-09-06 20:38:53] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21042 ms: Couldn't connect to server
+[2025-09-06 20:38:53] [INFO] Withdrawal response: null
+[2025-09-06 20:38:53] [ERROR] Withdrawal failed - Code: N/A, Message: Withdrawal request failed
+[2025-09-06 20:38:53] [ERROR] Withdrawal request failed: Withdrawal request failed
+[2025-09-06 20:40:01] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 505 RWF, Reason: Withdrawal request
+[2025-09-06 20:40:01] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250906204001","amount":505,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"a65035178b2df4dc45db700e3cfd3cc586205297976026a0fba57298528ed86e","mobilephone":"250781014782","requesttransactionid":"TXN17571840019346","accountno":"250160000011"}
+[2025-09-06 20:40:06] [INFO] Withdrawal response: {"status":"Successfull","referenceid":"22750445889","success":true,"responsecode":"2001","transactionid":"240961720250906184006071328","statusdesc":"Successfull"}
+[2025-09-06 20:40:06] [EXCEPTION] [EXCEPTION] [EXCEPTION] Error: Call to undefined method DatabaseService::insertTransaction() in C:\xampp\htdocs\payment-system\process_withdrawal.php on line 100
+Stack trace:
+#0 {main}
+[2025-09-06 20:42:24] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:42:41] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:42:45] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21039 ms: Couldn't connect to server
+[2025-09-06 20:42:45] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-09-06 20:42:45] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-09-06 20:42:48] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:42:50] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:42:52] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:43:02] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21047 ms: Couldn't connect to server
+[2025-09-06 20:43:02] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-09-06 20:43:02] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-09-06 20:43:06] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21034 ms: Couldn't connect to server
+[2025-09-06 20:43:09] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21049 ms: Couldn't connect to server
+[2025-09-06 20:43:09] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-09-06 20:43:09] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-09-06 20:43:11] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21043 ms: Couldn't connect to server
+[2025-09-06 20:43:11] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-09-06 20:43:11] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-09-06 20:43:13] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21053 ms: Couldn't connect to server
+[2025-09-06 20:43:13] [ERROR] Balance inquiry failed - Code: N/A, Message: Unknown error
+[2025-09-06 20:43:13] [WARNING] Failed to retrieve account balance: Unknown error
+[2025-09-06 20:43:23] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21047 ms: Couldn't connect to server
+[2025-09-06 20:43:27] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21048 ms: Couldn't connect to server
+[2025-09-06 20:43:30] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21052 ms: Couldn't connect to server
+[2025-09-06 20:43:32] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21040 ms: Couldn't connect to server
+[2025-09-06 20:43:34] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21035 ms: Couldn't connect to server
+[2025-09-06 20:43:42] [INFO] Requesting account balance from InTouch API
+[2025-09-06 20:43:45] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21033 ms: Couldn't connect to server
+[2025-09-06 20:43:48] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21037 ms: Couldn't connect to server
+[2025-09-06 20:43:50] [INFO] Account balance retrieved successfully: 150.36 RWF
+[2025-09-06 20:43:50] [INFO] Successfully retrieved account balance: 150.36 RWF
+[2025-09-06 20:43:50] [INFO] API verification failed for WTH1002, trusting local status
+[2025-09-06 20:43:50] [INFO] API verification failed for WTH1001, trusting local status
+[2025-09-06 20:43:50] [INFO] API verification failed for TXN1008, trusting local status
+[2025-09-06 20:43:50] [INFO] API verification failed for TXN1005, trusting local status
+[2025-09-06 20:43:50] [INFO] API verification failed for TXN1002, trusting local status
+[2025-09-06 20:43:51] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21036 ms: Couldn't connect to server
+[2025-09-06 20:43:59] [INFO] API verification failed for WTH1002, trusting local status
+[2025-09-06 20:43:59] [INFO] API verification failed for WTH1001, trusting local status
+[2025-09-06 20:43:59] [INFO] API verification failed for TXN1008, trusting local status
+[2025-09-06 20:43:59] [INFO] API verification failed for TXN1005, trusting local status
+[2025-09-06 20:43:59] [INFO] API verification failed for TXN1002, trusting local status
+[2025-09-06 20:44:04] [INFO] API verification failed for WTH1002, trusting local status
+[2025-09-06 20:44:04] [INFO] API verification failed for WTH1001, trusting local status
+[2025-09-06 20:44:04] [INFO] API verification failed for TXN1008, trusting local status
+[2025-09-06 20:44:04] [INFO] API verification failed for TXN1005, trusting local status
+[2025-09-06 20:44:04] [INFO] API verification failed for TXN1002, trusting local status
+[2025-09-06 20:44:10] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21064 ms: Couldn't connect to server
+[2025-09-06 20:44:10] [INFO] API verification failed for WTH1002, trusting local status
+[2025-09-06 20:44:10] [INFO] API verification failed for WTH1001, trusting local status
+[2025-09-06 20:44:10] [INFO] API verification failed for TXN1008, trusting local status
+[2025-09-06 20:44:10] [INFO] API verification failed for TXN1005, trusting local status
+[2025-09-06 20:44:10] [INFO] API verification failed for TXN1002, trusting local status
+[2025-09-06 20:44:11] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21045 ms: Couldn't connect to server
+[2025-09-06 20:44:11] [INFO] API verification failed for WTH1002, trusting local status
+[2025-09-06 20:44:11] [INFO] API verification failed for WTH1001, trusting local status
+[2025-09-06 20:44:11] [INFO] API verification failed for TXN1008, trusting local status
+[2025-09-06 20:44:11] [INFO] API verification failed for TXN1005, trusting local status
+[2025-09-06 20:44:11] [INFO] API verification failed for TXN1002, trusting local status
+[2025-09-06 20:44:32] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 9800 RWF, Reason: Withdrawal request
+[2025-09-06 20:44:32] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250906204432","amount":9800,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"d47663e35419b7c44f6bc368506dbb78b2aba129c3e6768a1082429f589e7be5","mobilephone":"250781014782","requesttransactionid":"TXN17571842729416","accountno":"250160000011"}
+[2025-09-06 20:44:40] [INFO] Withdrawal response: {"message":"The total amount to be paid should be less than 1000 RWF","responsecode":"2300","success":false}
+[2025-09-06 20:44:40] [ERROR] Withdrawal failed - Code: 2300, Message: Withdrawal request failed
+[2025-09-06 20:44:40] [ERROR] Withdrawal request failed: Withdrawal request failed
+[2025-09-06 20:45:30] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 1000 RWF, Reason: Withdrawal request
+[2025-09-06 20:45:30] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250906204530","amount":1000,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"0f53b83a84407e127d0bab1776ec68610c5db69a51ca57b507a8efc14e5c25a0","mobilephone":"250781014782","requesttransactionid":"TXN17571843302397","accountno":"250160000011"}
+[2025-09-06 20:45:30] [INFO] Withdrawal response: {"status":"Failed","requesttransactionid":"TXN17571843302397","statusdesc":"Insufficient Account Balance","responsecode":"1108","success":false}
+[2025-09-06 20:45:30] [ERROR] Withdrawal failed - Code: 1108, Message: Insufficient Account Balance
+[2025-09-06 20:45:30] [ERROR] Withdrawal request failed: Insufficient Account Balance
+[2025-09-06 20:45:46] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 1000 RWF, Reason: Withdrawal request
+[2025-09-06 20:45:46] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250906204546","amount":1000,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"9a0bda4918d11e9402774b7c6ab04874c7c1829a618d0d0da42421e95513232b","mobilephone":"250781014782","requesttransactionid":"TXN17571843462748","accountno":"250160000011"}
+[2025-09-06 20:46:07] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21055 ms: Couldn't connect to server
+[2025-09-06 20:46:07] [INFO] Withdrawal response: null
+[2025-09-06 20:46:07] [ERROR] Withdrawal failed - Code: N/A, Message: Withdrawal request failed
+[2025-09-06 20:46:07] [ERROR] Withdrawal request failed: Withdrawal request failed
+[2025-09-06 20:47:18] [INFO] Processing withdrawal request - Phone: 250781014782, Amount: 800 RWF, Reason: Withdrawal request
+[2025-09-06 20:47:18] [INFO] Initiating withdrawal request: {"username":"testa","timestamp":"20250906204718","amount":800,"withdrawcharge":1,"reason":"Withdrawal request","sid":1,"password":"bd5c67554aa0a1086e95b6ec25f26c9a7f7fe33d91646e24292c7edcb45b5e2e","mobilephone":"250781014782","requesttransactionid":"TXN17571844386139","accountno":"250160000011"}
+[2025-09-06 20:47:39] [ERROR] CURL Error in API call: Failed to connect to www.intouchpay.co.rw port 443 after 21052 ms: Couldn't connect to server
+[2025-09-06 20:47:39] [INFO] Withdrawal response: null
+[2025-09-06 20:47:39] [ERROR] Withdrawal failed - Code: N/A, Message: Withdrawal request failed
+[2025-09-06 20:47:39] [ERROR] Withdrawal request failed: Withdrawal request failed

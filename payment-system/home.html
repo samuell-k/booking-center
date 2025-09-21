@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntouchPay Payment System</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .main-container {
+            background: var(--surface-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            padding: 3rem;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+        }
+
+        .header {
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .option-card {
+            background: var(--surface-color);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .option-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .option-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover .option-icon {
+            transform: scale(1.1);
+        }
+
+        .payment-icon {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+        }
+
+        .dashboard-icon {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+        }
+
+        .withdrawal-icon {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning-color);
+        }
+
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .option-description {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .features-list i {
+            color: var(--success-color);
+            font-size: 0.75rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 2rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .option-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h1 class="title">IntouchPay</h1>
+            <p class="subtitle">Payment System</p>
+            <p class="description">
+                Secure and fast mobile money payment processing for Rwanda.
+                Make payments, request withdrawals, or manage your transaction dashboard with ease.
+            </p>
+        </div>
+
+        <div class="options-grid">
+            <a href="index.html" class="option-card">
+                <div class="option-icon payment-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="option-title">Make Payment</h3>
+                <p class="option-description">
+                    Send secure mobile money payments to Rwandan phone numbers
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> MTN & Airtel support</li>
+                    <li><i class="fas fa-check"></i> Real-time status tracking</li>
+                    <li><i class="fas fa-check"></i> Secure transactions</li>
+                    <li><i class="fas fa-check"></i> Instant notifications</li>
+                </ul>
+            </a>
+
+            <a href="withdrawal.html" class="option-card">
+                <div class="option-icon withdrawal-icon">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+                <h3 class="option-title">Request Withdrawal</h3>
+                <p class="option-description">
+                    Request withdrawals to your mobile money account
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Fast processing</li>
+                    <li><i class="fas fa-check"></i> Real-time status</li>
+                    <li><i class="fas fa-check"></i> Secure transfers</li>
+                    <li><i class="fas fa-check"></i> Transaction tracking</li>
+                </ul>
+            </a>
+
+            <a href="dashboard.html" class="option-card">
+                <div class="option-icon dashboard-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="option-title">Payment Dashboard</h3>
+                <p class="option-description">
+                    Monitor and manage all payment transactions in one place
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Transaction history</li>
+                    <li><i class="fas fa-check"></i> Payment analytics</li>
+                    <li><i class="fas fa-check"></i> Status filtering</li>
+                    <li><i class="fas fa-check"></i> Real-time updates</li>
+                </ul>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>
+                <i class="fas fa-shield-alt"></i>
+                Powered by IntouchPay API • Secure • Reliable • Fast
+            </p>
+        </div>
+    </div>
+</body>
+</html>

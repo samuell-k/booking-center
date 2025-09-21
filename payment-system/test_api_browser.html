@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>Dashboard API Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testAPI() {
+            const resultsDiv = document.getElementById('results');
+            
+            try {
+                console.log('Testing summary endpoint...');
+                const response = await fetch('dashboard_api.php?endpoint=summary');
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                const text = await response.text();
+                console.log('Response text:', text);
+                
+                const data = JSON.parse(text);
+                console.log('Parsed data:', data);
+                
+                if (data.success) {
+                    resultsDiv.innerHTML = '<h2>✓ API Working!</h2><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                } else {
+                    resultsDiv.innerHTML = '<h2>✗ API Error</h2><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultsDiv.innerHTML = '<h2>✗ Fetch Error</h2><p>' + error.message + '</p>';
+            }
+        }
+        
+        // Test when page loads
+        document.addEventListener('DOMContentLoaded', testAPI);
+    </script>
+</body>
+</html>

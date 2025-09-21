@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntouchPay - Secure Payment Gateway</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary-color: #64748b;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --border-focus: #3b82f6;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .payment-container {
+            background: var(--surface-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 28rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .payment-header .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .payment-header h1 {
+            color: var(--text-primary);
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .payment-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            background-color: var(--surface-color);
+            color: var(--text-primary);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+        }
+
+        .form-input:invalid {
+            border-color: var(--error-color);
+        }
+
+        .form-input.error {
+            border-color: var(--error-color);
+            background-color: #fef2f2;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .input-group .form-input {
+            padding-left: 2.75rem;
+        }
+
+        .amount-display {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .amount-display h3 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            opacity: 0.9;
+        }
+
+        .amount-display .price {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .pay-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pay-button:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pay-button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .pay-button:disabled {
+            background: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .pay-button .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+
+        .pay-button.loading .loading-spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Modal System */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--surface-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            max-width: 28rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            padding: 1.5rem 1.5rem 0;
+            text-align: center;
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .modal-icon.success {
+            background: linear-gradient(135deg, var(--success-color), #059669);
+        }
+
+        .modal-icon.error {
+            background: linear-gradient(135deg, var(--error-color), #dc2626);
+        }
+
+        .modal-icon.warning {
+            background: linear-gradient(135deg, var(--warning-color), #d97706);
+        }
+
+        .modal-icon.info {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .modal-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-details {
+            background: var(--background-color);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .modal-detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .modal-detail-label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .modal-detail-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-button {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-button.primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+        }
+
+        .modal-button.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .modal-button.secondary {
+            background: var(--background-color);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-button.secondary:hover {
+            background: var(--border-color);
+        }
+
+        .modal-button.danger {
+            background: linear-gradient(135deg, var(--error-color), #dc2626);
+            color: white;
+        }
+
+        .modal-button.danger:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Progress Indicator */
+        .progress-container {
+            margin: 1.5rem 0;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .progress-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            right: -50%;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 1;
+        }
+
+        .progress-step.active:not(:last-child)::after,
+        .progress-step.completed:not(:last-child)::after {
+            background: var(--primary-color);
+        }
+
+        .progress-step-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--border-color);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .progress-step-icon {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .progress-step.completed .progress-step-icon {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .progress-step-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .progress-step.active .progress-step-label,
+        .progress-step.completed .progress-step-label {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1100;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast {
+            background: var(--surface-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 1rem;
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            border-left-color: var(--success-color);
+        }
+
+        .toast.error {
+            border-left-color: var(--error-color);
+        }
+
+        .toast.warning {
+            border-left-color: var(--warning-color);
+        }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .toast.success .toast-icon {
+            background: var(--success-color);
+        }
+
+        .toast.error .toast-icon {
+            background: var(--error-color);
+        }
+
+        .toast.warning .toast-icon {
+            background: var(--warning-color);
+        }
+
+        .toast.info .toast-icon {
+            background: var(--primary-color);
+        }
+
+        .toast-content {
+            flex: 1;
+        }
+
+        .toast-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .toast-message {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .toast-close:hover {
+            background: var(--background-color);
+            color: var(--text-primary);
+        }
+
+        /* Security Info */
+        .security-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--background-color);
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .security-info i {
+            color: var(--success-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .payment-container {
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+
+            .payment-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .modal {
+                margin: 0.5rem;
+                max-width: calc(100vw - 1rem);
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+
+            .toast-container {
+                top: 0.5rem;
+                right: 0.5rem;
+                left: 0.5rem;
+            }
+
+            .toast {
+                min-width: auto;
+                max-width: 100%;
+            }
+
+            .progress-steps {
+                gap: 0.5rem;
+            }
+
+            .progress-step-label {
+                font-size: 0.625rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-container {
+                padding: 1rem;
+            }
+
+            .payment-header .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+
+            .payment-header h1 {
+                font-size: 1.25rem;
+            }
+
+            .modal-header {
+                padding: 1rem 1rem 0;
+            }
+
+            .modal-body {
+                padding: 0 1rem 1rem;
+            }
+
+            .modal-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+
+            .modal-title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Payment Container -->
+    <div class="payment-container">
+        <div class="payment-header">
+            <div class="logo">
+                <i class="fas fa-credit-card"></i>
+            </div>
+            <h1>Secure Payment</h1>
+            <p>Fast and secure mobile money payments</p>
+            <div style="margin-top: 1rem;">
+                <a href="dashboard.html" style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.5rem 1rem;
+                    background: rgba(37, 99, 235, 0.1);
+                    color: var(--primary-color);
+                    text-decoration: none;
+                    border-radius: var(--radius-md);
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    transition: all 0.2s;
+                " onmouseover="this.style.background='rgba(37, 99, 235, 0.2)'"
+                   onmouseout="this.style.background='rgba(37, 99, 235, 0.1)'">
+                    <i class="fas fa-chart-line"></i>
+                    View Dashboard
+                </a>
+            </div>
+        </div>
+
+        <div class="amount-display">
+            <h3>Payment Amount</h3>
+            <div class="price">Enter amount (minimum 100 RWF)</div>
+        </div>
+
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="amount">Amount (RWF)</label>
+                <div class="input-group">
+                    <i class="fas fa-money-bill-wave input-icon"></i>
+                    <input
+                        type="number"
+                        id="amount"
+                        class="form-input"
+                        placeholder="1000"
+                        min="100"
+                        step="1"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Mobile Number</label>
+                <div class="input-group">
+                    <i class="fas fa-mobile-alt input-icon"></i>
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        class="form-input"
+                        placeholder="250781234567"
+                        maxlength="12"
+                        required
+                    >
+                </div>
+            </div>
+
+            <button type="submit" class="pay-button" id="payButton">
+                <span class="loading-spinner"></span>
+                <span class="button-text">Pay Now</span>
+            </button>
+        </form>
+
+        <div class="security-info">
+            <i class="fas fa-shield-alt"></i>
+            <span>Your payment information is secure and encrypted</span>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Modal Overlays -->
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon info">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h2 class="modal-title">Confirm Payment</h2>
+                <p class="modal-subtitle">Please review your payment details</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-details" id="confirmationDetails">
+                    <!-- Payment details will be inserted here -->
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-button secondary" id="cancelPayment">Cancel</button>
+                    <button class="modal-button primary" id="confirmPayment">Confirm Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="statusModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon info">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h2 class="modal-title">Processing Payment</h2>
+                <p class="modal-subtitle">Please approve the transaction on your mobile device</p>
+            </div>
+            <div class="modal-body">
+                <div class="progress-container">
+                    <div class="progress-steps">
+                        <div class="progress-step completed">
+                            <div class="progress-step-icon">1</div>
+                            <div class="progress-step-label">Request Sent</div>
+                        </div>
+                        <div class="progress-step active">
+                            <div class="progress-step-icon">2</div>
+                            <div class="progress-step-label">Awaiting Approval</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-step-icon">3</div>
+                            <div class="progress-step-label">Payment Complete</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <p>A payment request has been sent to your mobile device. Please check your phone and approve the transaction to complete the payment.</p>
+                </div>
+                <div class="modal-details" id="statusDetails">
+                    <!-- Status details will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon success">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2 class="modal-title">Payment Successful!</h2>
+                <p class="modal-subtitle">Your payment has been processed successfully</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p>Thank you for your payment. A confirmation message has been sent to your mobile device.</p>
+                </div>
+                <div class="modal-details" id="successDetails">
+                    <!-- Success details will be inserted here -->
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-button primary" id="closeSuccess">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="errorModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon error">
+                    <i class="fas fa-times"></i>
+                </div>
+                <h2 class="modal-title">Payment Failed</h2>
+                <p class="modal-subtitle">There was an issue processing your payment</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content" id="errorMessage">
+                    <p>Please try again or contact support if the problem persists.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-button secondary" id="closeError">Close</button>
+                    <button class="modal-button primary" id="retryPayment">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modern Payment System Implementation
+        class PaymentSystem {
+            constructor() {
+                this.initializeElements();
+                this.bindEvents();
+                this.currentTransaction = null;
+                this.statusCheckInterval = null;
+            }
+
+            initializeElements() {
+                // Form elements
+                this.phoneInput = document.getElementById('phoneNumber');
+                this.amountInput = document.getElementById('amount');
+                this.paymentForm = document.getElementById('paymentForm');
+                this.payButton = document.getElementById('payButton');
+                this.buttonText = this.payButton.querySelector('.button-text');
+
+                // Modal elements
+                this.confirmationModal = document.getElementById('confirmationModal');
+                this.statusModal = document.getElementById('statusModal');
+                this.successModal = document.getElementById('successModal');
+                this.errorModal = document.getElementById('errorModal');
+                this.toastContainer = document.getElementById('toastContainer');
+
+                // Modal buttons
+                this.cancelPayment = document.getElementById('cancelPayment');
+                this.confirmPayment = document.getElementById('confirmPayment');
+                this.closeSuccess = document.getElementById('closeSuccess');
+                this.closeError = document.getElementById('closeError');
+                this.retryPayment = document.getElementById('retryPayment');
+            }
+
+            bindEvents() {
+                // Form validation and formatting
+                this.phoneInput.addEventListener('input', (e) => this.formatPhoneNumber(e));
+                this.amountInput.addEventListener('input', (e) => this.formatAmount(e));
+                this.paymentForm.addEventListener('submit', (e) => this.handleFormSubmit(e));
+
+                // Modal events
+                this.cancelPayment.addEventListener('click', () => this.hideModal(this.confirmationModal));
+                this.confirmPayment.addEventListener('click', () => this.processPayment());
+                this.closeSuccess.addEventListener('click', () => this.handleSuccessClose());
+                this.closeError.addEventListener('click', () => this.hideModal(this.errorModal));
+                this.retryPayment.addEventListener('click', () => this.handleRetry());
+
+                // Close modals on overlay click
+                [this.confirmationModal, this.statusModal, this.successModal, this.errorModal].forEach(modal => {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            this.hideModal(modal);
+                        }
+                    });
+                });
+
+                // Keyboard events
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.hideAllModals();
+                    }
+                });
+            }
+
+            formatPhoneNumber(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 12) {
+                    value = value.slice(0, 12);
+                }
+                e.target.value = value;
+                this.validatePhoneNumber(value);
+            }
+
+            formatAmount(e) {
+                let value = e.target.value;
+                value = value.replace(/[^\d.]/g, '');
+
+                const parts = value.split('.');
+                if (parts.length > 2) {
+                    value = parts[0] + '.' + parts.slice(1).join('');
+                }
+
+                e.target.value = value;
+                this.validateAmount(parseFloat(value) || 0);
+            }
+
+            validatePhoneNumber(phone) {
+                const isValid = this.isValidRwandanPhoneNumber(phone);
+                this.phoneInput.classList.toggle('error', phone.length > 0 && !isValid);
+                return isValid;
+            }
+
+            validateAmount(amount) {
+                const isValid = amount >= 100;
+                this.amountInput.classList.toggle('error', amount > 0 && !isValid);
+                return isValid;
+            }
+
+            isValidRwandanPhoneNumber(phone) {
+                if (!/^\d{12}$/.test(phone)) return false;
+
+                const validPrefixes = [
+                    '250078', '250079', // MTN
+                    '250072', '250073', '250075', '250076', '250077', // Airtel
+                    '250781', '250782', '250783', '250784', '250785', '250786', '250787', '250788', '250789', // MTN
+                    '250720', '250721', '250722', '250723', '250724', '250725', '250726', '250727', '250728', '250729' // Airtel
+                ];
+
+                return validPrefixes.some(prefix => phone.startsWith(prefix));
+            }
+
+            handleFormSubmit(e) {
+                e.preventDefault();
+
+                const phoneNumber = this.phoneInput.value.trim();
+                const amount = parseFloat(this.amountInput.value) || 0;
+
+                // Validate inputs
+                if (!phoneNumber) {
+                    this.showToast('error', 'Phone Required', 'Please enter your phone number');
+                    this.phoneInput.focus();
+                    return;
+                }
+
+                if (!this.validatePhoneNumber(phoneNumber)) {
+                    this.showToast('error', 'Invalid Phone', 'Please enter a valid Rwandan phone number (12 digits)');
+                    this.phoneInput.focus();
+                    return;
+                }
+
+                if (!this.validateAmount(amount)) {
+                    this.showToast('error', 'Invalid Amount', 'Amount must be at least 100 RWF');
+                    this.amountInput.focus();
+                    return;
+                }
+
+                // Show confirmation modal
+                this.showConfirmationModal(phoneNumber, amount);
+            }
+
+            showConfirmationModal(phoneNumber, amount) {
+                const details = document.getElementById('confirmationDetails');
+                details.innerHTML = `
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Amount</span>
+                        <span class="modal-detail-value">${amount.toLocaleString()} RWF</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Mobile Number</span>
+                        <span class="modal-detail-value">${phoneNumber}</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Network</span>
+                        <span class="modal-detail-value">${this.getNetworkName(phoneNumber)}</span>
+                    </div>
+                `;
+
+                this.currentTransaction = { phoneNumber, amount };
+                this.showModal(this.confirmationModal);
+            }
+
+            getNetworkName(phoneNumber) {
+                if (phoneNumber.startsWith('25007') || phoneNumber.startsWith('25078')) {
+                    return 'MTN Rwanda';
+                } else if (phoneNumber.startsWith('25007') || phoneNumber.startsWith('25072')) {
+                    return 'Airtel Rwanda';
+                }
+                return 'Unknown Network';
+            }
+
+            async processPayment() {
+                if (!this.currentTransaction) return;
+
+                this.hideModal(this.confirmationModal);
+                this.setButtonLoading(true);
+
+                try {
+                    const response = await fetch('process_payment.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            phone_number: this.currentTransaction.phoneNumber,
+                            amount: this.currentTransaction.amount
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        this.currentTransaction.transactionId = data.transaction_id;
+                        this.currentTransaction.intouchpayTransactionId = data.intouchpay_transaction_id;
+                        this.showStatusModal();
+                        this.startStatusChecking();
+                        this.showToast('info', 'Request Sent', 'Payment request sent to your mobile device');
+                    } else {
+                        this.showErrorModal(data.message || 'Payment request failed');
+                        this.showToast('error', 'Request Failed', data.message || 'Please try again');
+                    }
+                } catch (error) {
+                    console.error('Payment error:', error);
+                    this.showErrorModal('Network error. Please check your connection and try again.');
+                    this.showToast('error', 'Network Error', 'Unable to connect to payment service');
+                } finally {
+                    this.setButtonLoading(false);
+                }
+            }
+
+            showStatusModal() {
+                const details = document.getElementById('statusDetails');
+                details.innerHTML = `
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Amount</span>
+                        <span class="modal-detail-value">${this.currentTransaction.amount.toLocaleString()} RWF</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Mobile Number</span>
+                        <span class="modal-detail-value">${this.currentTransaction.phoneNumber}</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Transaction ID</span>
+                        <span class="modal-detail-value">${this.currentTransaction.transactionId}</span>
+                    </div>
+                `;
+
+                this.showModal(this.statusModal);
+            }
+
+            startStatusChecking() {
+                let checkCount = 0;
+                const maxChecks = 30; // 5 minutes
+
+                this.statusCheckInterval = setInterval(async () => {
+                    checkCount++;
+
+                    try {
+                        const response = await fetch(`check_status.php?transaction_id=${this.currentTransaction.transactionId}`);
+                        const data = await response.json();
+
+                        if (data.success) {
+                            if (data.status === 'successful' || data.status === 'successfull') {
+                                this.handlePaymentSuccess(data);
+                                return;
+                            } else if (data.status === 'failed' || data.status === 'failure') {
+                                this.handlePaymentFailure(data);
+                                return;
+                            }
+                        }
+
+                        if (checkCount >= maxChecks) {
+                            this.handlePaymentTimeout();
+                        }
+                    } catch (error) {
+                        console.error('Status check error:', error);
+                        if (checkCount >= maxChecks) {
+                            this.handlePaymentTimeout();
+                        }
+                    }
+                }, 10000); // Check every 10 seconds
+            }
+
+            handlePaymentSuccess(data) {
+                this.clearStatusInterval();
+                this.updateProgressStep(3, 'completed');
+
+                setTimeout(() => {
+                    this.hideModal(this.statusModal);
+                    this.showSuccessModal(data);
+                    this.showToast('success', 'Payment Complete', 'Your payment was processed successfully');
+                }, 1000);
+            }
+
+            handlePaymentFailure(data) {
+                this.clearStatusInterval();
+                this.hideModal(this.statusModal);
+                this.showErrorModal(data.status_desc || 'Payment was not completed');
+                this.showToast('error', 'Payment Failed', data.status_desc || 'Transaction was declined');
+            }
+
+            handlePaymentTimeout() {
+                this.clearStatusInterval();
+                this.hideModal(this.statusModal);
+                this.showErrorModal('Payment status could not be confirmed. Please check your mobile money account or contact support.');
+                this.showToast('warning', 'Status Unknown', 'Unable to confirm payment status');
+            }
+
+            showSuccessModal(data) {
+                const details = document.getElementById('successDetails');
+                details.innerHTML = `
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Amount</span>
+                        <span class="modal-detail-value">${this.currentTransaction.amount.toLocaleString()} RWF</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Mobile Number</span>
+                        <span class="modal-detail-value">${this.currentTransaction.phoneNumber}</span>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Transaction ID</span>
+                        <span class="modal-detail-value">${this.currentTransaction.transactionId}</span>
+                    </div>
+                    ${data.reference_no ? `
+                    <div class="modal-detail-row">
+                        <span class="modal-detail-label">Reference</span>
+                        <span class="modal-detail-value">${data.reference_no}</span>
+                    </div>
+                    ` : ''}
+                `;
+
+                this.showModal(this.successModal);
+            }
+
+            showErrorModal(message) {
+                const errorMessage = document.getElementById('errorMessage');
+                errorMessage.innerHTML = `<p>${message}</p>`;
+                this.showModal(this.errorModal);
+            }
+
+            updateProgressStep(step, status) {
+                const steps = document.querySelectorAll('.progress-step');
+                if (steps[step - 1]) {
+                    steps[step - 1].className = `progress-step ${status}`;
+                }
+            }
+
+            clearStatusInterval() {
+                if (this.statusCheckInterval) {
+                    clearInterval(this.statusCheckInterval);
+                    this.statusCheckInterval = null;
+                }
+            }
+
+            // Modal Management
+            showModal(modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            hideModal(modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+
+                // Clear status checking if hiding status modal
+                if (modal === this.statusModal) {
+                    this.clearStatusInterval();
+                }
+            }
+
+            hideAllModals() {
+                [this.confirmationModal, this.statusModal, this.successModal, this.errorModal].forEach(modal => {
+                    this.hideModal(modal);
+                });
+            }
+
+            // Button States
+            setButtonLoading(loading) {
+                this.payButton.disabled = loading;
+                this.payButton.classList.toggle('loading', loading);
+                this.buttonText.textContent = loading ? 'Processing...' : 'Pay Now';
+            }
+
+            // Event Handlers
+            handleSuccessClose() {
+                this.hideModal(this.successModal);
+                this.resetForm();
+            }
+
+            handleRetry() {
+                this.hideModal(this.errorModal);
+                // Form is already filled, user can modify and resubmit
+            }
+
+            resetForm() {
+                this.paymentForm.reset();
+                this.currentTransaction = null;
+                this.phoneInput.classList.remove('error');
+                this.amountInput.classList.remove('error');
+            }
+
+            // Toast Notification System
+            showToast(type, title, message, duration = 5000) {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+
+                const iconMap = {
+                    success: 'fas fa-check',
+                    error: 'fas fa-times',
+                    warning: 'fas fa-exclamation-triangle',
+                    info: 'fas fa-info-circle'
+                };
+
+                toast.innerHTML = `
+                    <div class="toast-icon">
+                        <i class="${iconMap[type] || iconMap.info}"></i>
+                    </div>
+                    <div class="toast-content">
+                        <div class="toast-title">${title}</div>
+                        <div class="toast-message">${message}</div>
+                    </div>
+                    <button class="toast-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+
+                // Add close functionality
+                const closeBtn = toast.querySelector('.toast-close');
+                closeBtn.addEventListener('click', () => this.removeToast(toast));
+
+                // Add to container
+                this.toastContainer.appendChild(toast);
+
+                // Trigger animation
+                setTimeout(() => toast.classList.add('show'), 100);
+
+                // Auto remove
+                setTimeout(() => this.removeToast(toast), duration);
+
+                return toast;
+            }
+
+            removeToast(toast) {
+                if (toast && toast.parentNode) {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 300);
+                }
+            }
+
+            // Utility Methods
+            formatCurrency(amount) {
+                return new Intl.NumberFormat('en-RW', {
+                    style: 'currency',
+                    currency: 'RWF',
+                    minimumFractionDigits: 0
+                }).format(amount);
+            }
+
+            formatPhoneDisplay(phone) {
+                if (phone.length === 12) {
+                    return `${phone.slice(0, 3)} ${phone.slice(3, 6)} ${phone.slice(6, 9)} ${phone.slice(9)}`;
+                }
+                return phone;
+            }
+        }
+
+        // Initialize the payment system when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.paymentSystem = new PaymentSystem();
+        });
+
+        // Handle page visibility changes to pause/resume status checking
+        document.addEventListener('visibilitychange', () => {
+            if (window.paymentSystem && window.paymentSystem.statusCheckInterval) {
+                if (document.hidden) {
+                    // Page is hidden, could pause checking or continue
+                    console.log('Page hidden, continuing status checks...');
+                } else {
+                    // Page is visible again
+                    console.log('Page visible, status checks active...');
+                }
+            }
+        });
+
+        // Handle online/offline status
+        window.addEventListener('online', () => {
+            if (window.paymentSystem) {
+                window.paymentSystem.showToast('success', 'Connection Restored', 'Internet connection is back');
+            }
+        });
+
+        window.addEventListener('offline', () => {
+            if (window.paymentSystem) {
+                window.paymentSystem.showToast('warning', 'Connection Lost', 'Please check your internet connection');
+            }
+        });
+    </script>
+</body>
+</html>

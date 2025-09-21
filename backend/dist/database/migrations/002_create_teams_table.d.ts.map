@@ -1,0 +1,1 @@
+{"version":3,"file":"002_create_teams_table.d.ts","sourceRoot":"","sources":["../../../src/database/migrations/002_create_teams_table.js"],"names":[],"mappings":"AAIa,yBAHD,OAAO,MAAM,EAAE,IAAI,GACjB,OAAO,CAAC,IAAI,CAAC,CAoG1B;AAMc,2BAHH,OAAO,MAAM,EAAE,IAAI,GACjB,OAAO,CAAC,IAAI,CAAC,CAI1B"}

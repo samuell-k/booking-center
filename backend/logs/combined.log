@@ -1,0 +1,12 @@
+{"level":"\u001b[31merror\u001b[39m","message":"\u001b[31m❌ Database connection failed:\u001b[39m","timestamp":"2025-09-17 14:00:23:023"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 SmartSports Rwanda API Server running on port 5000\u001b[39m","timestamp":"2025-09-17 14:04:01:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📚 API Documentation: http://localhost:5000/api/docs\u001b[39m","timestamp":"2025-09-17 14:04:01:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🏥 Health Check: http://localhost:5000/health\u001b[39m","timestamp":"2025-09-17 14:04:01:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🌍 Environment: development\u001b[39m","timestamp":"2025-09-17 14:04:01:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 14:05:31:531"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 14:05:59:559"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 14:30:58:3058"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 14:31:41:3141"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 14:31:54:3154"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 14:34:07:347"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mServer started on port 5000\u001b[39m","timestamp":"2025-09-17 18:48:56:4856"}
